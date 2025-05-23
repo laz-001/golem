@@ -22,7 +22,7 @@ env:
 
 jobs:
   build:
-    if: false # Disabled for faster iteration on Windows
+    # if: false # Disabled for faster iteration on Windows
     env:
       CARGO_BUILD_JOBS: 4
     strategy:
@@ -106,7 +106,7 @@ jobs:
           include_passed: true
 
   worker-tests:
-    if: false # Disabled for faster iteration on Windows
+    # if: false # Disabled for faster iteration on Windows
     env:
       CARGO_BUILD_JOBS: 10
     strategy:
@@ -175,7 +175,7 @@ jobs:
           include_passed: true
 
   api-and-integration-tests:
-    if: false # Disabled for faster iteration on Windows
+    # if: false # Disabled for faster iteration on Windows
     env:
       CARGO_BUILD_JOBS: 10
     strategy:
@@ -247,7 +247,7 @@ jobs:
           include_passed: true
 
   wasm-rpc-stub:
-    if: false # Disabled for faster iteration on Windows
+    # if: false # Disabled for faster iteration on Windows
     strategy:
       fail-fast: false
       matrix:
@@ -536,50 +536,3 @@ jobs:
           SLACK_MESSAGE: "Publish - cargo result: `${{ needs.publish.result }}`, docker result: `${{ needs.docker-publish.result }}`"
           SLACK_USERNAME: CI
           SLACK_WEBHOOK: ${{ secrets.SLACK_ALERT_URL }}
-
-  clippy-matrix:
-    runs-on: windows-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        crate:
-          - golem-api-grpc
-          - golem-client
-          - golem-common
-          - golem-component-compilation-service
-          - golem-component-service
-          - golem-component-service-base
-          - golem-rib
-          - golem-rib-repl
-          - golem-service-base
-          - golem-shard-manager
-          - golem-test-framework
-          - golem-wasm-ast
-          - golem-wasm-rpc
-          - golem-wasm-rpc-derive
-          - golem-worker-executor
-          - golem-worker-executor-base
-          - golem-worker-service-base
-          - integration-tests
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-          submodules: recursive
-      - name: Setup Rust
-        run: rustup update stable --no-self-update && rustup default stable
-      - name: Install Protoc
-        uses: arduino/setup-protoc@v3
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Install Python (for cargo-make, if needed)
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-      - name: Install cargo-make
-        run: cargo install --force cargo-make
-      - name: Install clippy
-        run: rustup component add clippy
-      - name: Run clippy for ${{ matrix.crate }}
-        run: cargo clippy -p ${{ matrix.crate }} --all-targets --all-features -- --no-deps
