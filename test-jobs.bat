@@ -1,0 +1,4 @@
+@echo off
+set CARGO_BUILD_JOBS=4
+echo CARGO_BUILD_JOBS=%CARGO_BUILD_JOBS%
+cargo -V

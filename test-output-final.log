@@ -1,0 +1,307 @@
+   Compiling tokio v1.44.1
+   Compiling windows-sys v0.59.0
+   Compiling serde_json v1.0.140
+   Compiling ahash v0.8.11
+   Compiling tungstenite v0.25.0
+   Compiling whoami v1.5.2
+   Compiling sqlx-core v0.8.3
+   Compiling opentelemetry-prometheus v0.17.0
+   Compiling hashbrown v0.14.5
+   Compiling wasmparser v0.219.2
+   Compiling regalloc2 v0.10.2
+   Compiling wit-parser v0.227.1
+   Compiling auditable-serde v0.8.0
+   Compiling cranelift-codegen v0.114.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+   Compiling fxprof-processed-profile v0.6.0
+   Compiling wasm-metadata v0.227.1
+   Compiling tokio-util v0.7.14
+   Compiling aws-smithy-async v1.2.5
+   Compiling multer v3.1.0
+   Compiling h2 v0.4.8
+   Compiling tokio-stream v0.1.17
+   Compiling aws-smithy-types v1.3.0
+   Compiling schannel v0.1.27
+   Compiling aws-smithy-runtime-api v1.7.4
+   Compiling io-extras v0.18.4
+   Compiling fs-set-times v0.20.3
+   Compiling winapi-util v0.1.9
+   Compiling winx v0.36.4
+   Compiling termcolor v1.4.1
+   Compiling h2 v0.3.26
+   Compiling cap-primitives v3.4.2
+   Compiling wasmprinter v0.219.2
+   Compiling aws-smithy-eventstream v0.60.8
+   Compiling hyper v1.6.0
+   Compiling rustls-native-certs v0.6.3
+   Compiling wit-parser v0.219.2
+   Compiling tokio-rustls v0.24.1
+   Compiling wasmtime-environ v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+   Compiling hyper-util v0.1.10
+   Compiling cap-std v3.4.2
+   Compiling aws-smithy-http v0.62.0
+   Compiling aws-credential-types v1.2.2
+   Compiling hyper v0.14.32
+   Compiling wasmtime-wit-bindgen v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+   Compiling tower v0.5.2
+   Compiling tempfile v3.18.0
+   Compiling wasmtime-jit-icache-coherence v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+   Compiling wasmtime-fiber v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+   Compiling home v0.5.11
+   Compiling wasmtime-cache v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+   Compiling errno v0.3.10
+   Compiling tokio-tungstenite v0.25.0
+   Compiling rustix v0.38.44
+   Compiling poem v3.1.6
+   Compiling axum v0.7.9
+   Compiling cranelift-native v0.114.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+   Compiling cranelift-frontend v0.114.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+   Compiling wasmtime-component-macro v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+   Compiling wasmtime-cranelift v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+   Compiling hyper-rustls v0.24.2
+   Compiling aws-smithy-http-client v1.0.0
+   Compiling aws-smithy-runtime v1.8.0
+   Compiling hyper-timeout v0.5.2
+   Compiling wasmtime v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+   Compiling aws-types v1.3.6
+   Compiling aws-sigv4 v1.3.0
+   Compiling cap-fs-ext v3.4.2
+   Compiling fd-lock v4.0.4
+   Compiling tower v0.4.13
+   Compiling poem-openapi v5.1.5
+   Compiling tonic v0.12.3
+   Compiling aws-runtime v1.5.6
+   Compiling system-interface v0.27.3
+   Compiling cap-net-ext v3.4.2
+   Compiling etcetera v0.8.0
+   Compiling cap-time-ext v3.4.2
+   Compiling aws-smithy-json v0.61.3
+   Compiling wit-component v0.227.1
+   Compiling wasm-wave v0.227.1
+   Compiling rustls v0.23.23
+   Compiling sqlx-sqlite v0.8.3
+   Compiling sqlx-mysql v0.8.3
+   Compiling sqlx-postgres v0.8.3
+   Compiling event-listener-strategy v0.5.3
+   Compiling golem-wasm-ast v0.0.0 (P:\work\golem\wasm-ast)
+   Compiling native-tls v0.2.14
+   Compiling wiggle v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+   Compiling wasmtime-wasi v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+   Compiling aws-smithy-http v0.60.12
+   Compiling tracing-subscriber v0.3.19
+   Compiling sqlx-macros-core v0.8.3
+   Compiling tokio-rustls v0.26.2
+   Compiling sqlx-macros v0.8.3
+   Compiling tokio-native-tls v0.3.1
+   Compiling async-channel v2.3.1
+   Compiling aws-smithy-query v0.60.7
+   Compiling console-api v0.8.1
+   Compiling async-compression v0.4.20
+   Compiling combine v4.6.7
+   Compiling fred v9.4.0
+   Compiling blocking v1.6.1
+   Compiling sqlx v0.8.3
+   Compiling console-subscriber v0.4.1
+   Compiling aws-sdk-sts v1.63.0
+   Compiling hyper-tls v0.6.0
+   Compiling aws-smithy-checksums v0.60.13
+   Compiling hyper-rustls v0.27.5
+   Compiling async-lock v3.4.0
+   Compiling aws-sdk-sso v1.62.0
+   Compiling aws-sdk-ssooidc v1.63.0
+   Compiling hyper-named-pipe v0.1.0
+   Compiling aws-smithy-json v0.60.7
+   Compiling golem-wasm-rpc v0.0.0 (P:\work\golem\wasm-rpc)
+   Compiling rustls-native-certs v0.8.1
+   Compiling filetime v0.2.25
+   Compiling dashmap v6.1.0
+   Compiling async-hash v0.5.4
+   Compiling aws-sdk-s3 v1.65.0
+   Compiling test-r-core v2.1.0
+   Compiling tokio-tar v0.3.1
+   Compiling bollard v0.18.1
+   Compiling aws-config v1.5.10
+   Compiling async-fs v2.1.2
+   Compiling reqwest v0.12.14
+   Compiling wasm-metadata v0.202.0
+   Compiling interprocess v2.2.3
+   Compiling docker_credential v1.3.1
+   Compiling testcontainers v0.23.3
+   Compiling test-r-macro v1.2.2
+   Compiling wac-graph v0.6.1
+   Compiling async_zip v0.0.17
+   Compiling testcontainers-modules v0.11.6
+   Compiling test-r v2.1.0
+   Compiling golem-api-grpc v0.0.0 (P:\work\golem\golem-api-grpc)
+   Compiling golem-rib v0.0.0 (P:\work\golem\golem-rib)
+   Compiling golem-common v0.0.0 (P:\work\golem\golem-common)
+   Compiling golem-service-base v0.0.0 (P:\work\golem\golem-service-base)
+   Compiling golem-component-service-base v0.0.0 (P:\work\golem\golem-component-service-base)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 4m 28s
+     Running tests\tests.rs (target\debug\deps\tests-ef6d885cb08af217.exe)
+[33mCannot run tests in parallel when tests have shared dependencies and output capturing is on. Using a single thread.[0m
+Running 23 tests
+
+[ 1/23] Running test: tests::all::repo::sqlite::tests::component_find_by_names
+[ 1/23] Finished test: tests::all::repo::sqlite::tests::component_find_by_names                         [PASSED]
+[ 2/23] Running test: tests::all::repo::sqlite::tests::default_component_plugin_installation
+[ 2/23] Finished test: tests::all::repo::sqlite::tests::default_component_plugin_installation           [PASSED]
+[ 3/23] Running test: tests::all::repo::sqlite::tests::default_plugin_repo
+[ 3/23] Finished test: tests::all::repo::sqlite::tests::default_plugin_repo                             [PASSED]
+[ 4/23] Running test: tests::all::repo::sqlite::tests::repo_component_constraints
+[ 4/23] Finished test: tests::all::repo::sqlite::tests::repo_component_constraints                      [PASSED]
+[ 5/23] Running test: tests::all::repo::sqlite::tests::repo_component_delete
+[ 5/23] Finished test: tests::all::repo::sqlite::tests::repo_component_delete                           [PASSED]
+[ 6/23] Running test: tests::all::repo::sqlite::tests::repo_component_name_unique_in_namespace
+[ 6/23] Finished test: tests::all::repo::sqlite::tests::repo_component_name_unique_in_namespace         [PASSED]
+[ 7/23] Running test: tests::all::repo::sqlite::tests::repo_component_id_unique
+[ 7/23] Finished test: tests::all::repo::sqlite::tests::repo_component_id_unique                        [PASSED]
+[ 8/23] Running test: tests::all::repo::postgres::tests::component_find_by_names
+  [31mERROR[0m [1;31mgolem_common::tracing[0m[31m: [31mpanic, [1;31mpanic_info[0m[31m: panicked at golem-component-service-base\tests\all\repo\sqlite.rs:168:45:
+called `Result::unwrap()` on an `Err` value: Os { code: 32, kind: Uncategorized, message: "The process cannot access the file because it is being used by another process." }, [1;31mpanic_backtrace[0m[31m:    0: std::backtrace_rs::backtrace::win64::trace
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359/library\std\src\..\..\backtrace\src\backtrace\win64.rs:85
+   1: std::backtrace_rs::backtrace::trace_unsynchronized
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359/library\std\src\..\..\backtrace\src\backtrace\mod.rs:66
+   2: std::backtrace::Backtrace::create
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359/library\std\src\backtrace.rs:331
+   3: std::backtrace::Backtrace::force_capture
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359/library\std\src\backtrace.rs:312
+   4: golem_common::tracing::init_tracing::closure$1<golem_common::tracing::filter::for_all_outputs::default_debug_env::closure_env$0>
+             at P:\work\golem\golem-common\src\tracing.rs:401
+   5: std::panicking::rust_panic_with_hook
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359/library\std\src\panicking.rs:841
+   6: std::panicking::begin_panic_handler::closure$0
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359/library\std\src\panicking.rs:706
+   7: std::sys::backtrace::__rust_end_short_backtrace<std::panicking::begin_panic_handler::closure_env$0,never$>
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359/library\std\src\sys\backtrace.rs:168
+   8: std::panicking::begin_panic_handler
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359/library\std\src\panicking.rs:697
+   9: core::panicking::panic_fmt
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359/library\core\src\panicking.rs:75
+  10: core::result::unwrap_failed
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359/library\core\src\result.rs:1704
+  11: enum2$<core::result::Result<tuple$<>,std::io::error::Error> >::unwrap
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\core\src\result.rs:1109
+  12: tests::all::repo::sqlite::impl$1::drop
+             at .\tests\all\repo\sqlite.rs:168
+  13: core::ptr::drop_in_place<tests::all::repo::sqlite::SqliteDb>
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\core\src\ptr\mod.rs:523
+  14: core::ptr::drop_in_place<dyn$<core::any::Any,core::marker::Send,core::marker::Sync> >
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\core\src\ptr\mod.rs:523
+  15: alloc::sync::Arc<dyn$<core::any::Any,core::marker::Send,core::marker::Sync>,alloc::alloc::Global>::drop_slow<dyn$<core::any::Any,core::marker::Send,core::marker::Sync>,alloc::alloc::Global>
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\alloc\src\sync.rs:1943
+  16: alloc::sync::impl$38::drop<dyn$<core::any::Any,core::marker::Send,core::marker::Sync>,alloc::alloc::Global>
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\alloc\src\sync.rs:2633
+  17: core::ptr::drop_in_place<alloc::sync::Arc<dyn$<core::any::Any,core::marker::Send,core::marker::Sync>,alloc::alloc::Global> >
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\core\src\ptr\mod.rs:523
+  18: core::ptr::drop_in_place<tuple$<alloc::string::String,alloc::sync::Arc<dyn$<core::any::Any,core::marker::Send,core::marker::Sync>,alloc::alloc::Global> > >
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\core\src\ptr\mod.rs:523
+  19: hashbrown::raw::Bucket<tuple$<alloc::string::String,alloc::sync::Arc<dyn$<core::any::Any,core::marker::Send,core::marker::Sync>,alloc::alloc::Global> > >::drop
+             at /rust/deps\hashbrown-0.15.2\src\raw\mod.rs:468
+  20: hashbrown::raw::RawTableInner::drop_elements<tuple$<alloc::string::String,alloc::sync::Arc<dyn$<core::any::Any,core::marker::Send,core::marker::Sync>,alloc::alloc::Global> > >
+             at /rust/deps\hashbrown-0.15.2\src\raw\mod.rs:2073
+  21: hashbrown::raw::RawTableInner::drop_inner_table<tuple$<alloc::string::String,alloc::sync::Arc<dyn$<core::any::Any,core::marker::Send,core::marker::Sync>,alloc::alloc::Global> >,alloc::alloc::Global>
+             at /rust/deps\hashbrown-0.15.2\src\raw\mod.rs:2128
+  22: hashbrown::raw::impl$18::drop<tuple$<alloc::string::String,alloc::sync::Arc<dyn$<core::any::Any,core::marker::Send,core::marker::Sync>,alloc::alloc::Global> >,alloc::alloc::Global>
+             at /rust/deps\hashbrown-0.15.2\src\raw\mod.rs:3315
+  23: core::ptr::drop_in_place<hashbrown::raw::RawTable<tuple$<alloc::string::String,alloc::sync::Arc<dyn$<core::any::Any,core::marker::Send,core::marker::Sync>,alloc::alloc::Global> >,alloc::alloc::Global> >
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\core\src\ptr\mod.rs:523
+  24: core::ptr::drop_in_place<hashbrown::map::HashMap<alloc::string::String,alloc::sync::Arc<dyn$<core::any::Any,core::marker::Send,core::marker::Sync>,alloc::alloc::Global>,std::hash::random::RandomState,alloc::alloc::Global> >
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\core\src\ptr\mod.rs:523
+  25: core::ptr::drop_in_place<std::collections::hash::map::HashMap<alloc::string::String,alloc::sync::Arc<dyn$<core::any::Any,core::marker::Send,core::marker::Sync>,alloc::alloc::Global>,std::hash::random::RandomState> >
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\core\src\ptr\mod.rs:523
+  26: core::ptr::drop_in_place<dyn$<test_r_core::internal::DependencyView,core::marker::Send,core::marker::Sync> >
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\core\src\ptr\mod.rs:523
+  27: alloc::sync::Arc<dyn$<test_r_core::internal::DependencyView,core::marker::Send,core::marker::Sync>,alloc::alloc::Global>::drop_slow<dyn$<test_r_core::internal::DependencyView,core::marker::Send,core::marker::Sync>,alloc::alloc::Global>
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\alloc\src\sync.rs:1943
+  28: alloc::sync::impl$38::drop<dyn$<test_r_core::internal::DependencyView,core::marker::Send,core::marker::Sync>,alloc::alloc::Global>
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\alloc\src\sync.rs:2633
+  29: core::ptr::drop_in_place<alloc::sync::Arc<dyn$<test_r_core::internal::DependencyView,core::marker::Send,core::marker::Sync>,alloc::alloc::Global> >
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\core\src\ptr\mod.rs:523
+  30: core::ptr::drop_in_place<test_r_core::execution::TestExecution>
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\core\src\ptr\mod.rs:523
+  31: test_r_core::tokio::test_thread::async_fn$0
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\test-r-core-2.1.0\src\tokio.rs:221
+  32: core::future::future::impl$1::poll<alloc::boxed::Box<enum2$<test_r_core::tokio::test_thread::async_fn_env$0>,alloc::alloc::Global> >
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\core\src\future\future.rs:124
+  33: tokio::runtime::park::impl$4::block_on::closure$0<core::pin::Pin<alloc::boxed::Box<enum2$<test_r_core::tokio::test_thread::async_fn_env$0>,alloc::alloc::Global> > >
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\runtime\park.rs:284
+  34: tokio::task::coop::with_budget
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\task\coop\mod.rs:167
+  35: tokio::task::coop::budget
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\task\coop\mod.rs:133
+  36: tokio::runtime::park::CachedParkThread::block_on<core::pin::Pin<alloc::boxed::Box<enum2$<test_r_core::tokio::test_thread::async_fn_env$0>,alloc::alloc::Global> > >
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\runtime\park.rs:284
+  37: tokio::runtime::context::blocking::BlockingRegionGuard::block_on<core::pin::Pin<alloc::boxed::Box<enum2$<test_r_core::tokio::test_thread::async_fn_env$0>,alloc::alloc::Global> > >
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\runtime\context\blocking.rs:66
+  38: tokio::runtime::handle::impl$0::block_on_inner::closure$0<core::pin::Pin<alloc::boxed::Box<enum2$<test_r_core::tokio::test_thread::async_fn_env$0>,alloc::alloc::Global> > >
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\runtime\handle.rs:327
+  39: tokio::runtime::context::runtime::enter_runtime<tokio::runtime::handle::impl$0::block_on_inner::closure_env$0<core::pin::Pin<alloc::boxed::Box<enum2$<test_r_core::tokio::test_thread::async_fn_env$0>,alloc::alloc::Global> > >,tuple$<> >
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\runtime\context\runtime.rs:65
+  40: tokio::runtime::handle::Handle::block_on_inner<core::pin::Pin<alloc::boxed::Box<enum2$<test_r_core::tokio::test_thread::async_fn_env$0>,alloc::alloc::Global> > >
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\runtime\handle.rs:326
+  41: tokio::runtime::handle::Handle::block_on<enum2$<test_r_core::tokio::test_thread::async_fn_env$0> >
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\runtime\handle.rs:303
+  42: test_r_core::tokio::async_test_runner::async_fn$0::closure$0
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\test-r-core-2.1.0\src\tokio.rs:93
+  43: tokio::runtime::blocking::task::impl$2::poll<test_r_core::tokio::async_test_runner::async_fn$0::closure_env$0,tuple$<> >
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\runtime\blocking\task.rs:42
+  44: tokio::runtime::task::core::impl$6::poll::closure$0<tokio::runtime::blocking::task::BlockingTask<test_r_core::tokio::async_test_runner::async_fn$0::closure_env$0>,tokio::runtime::blocking::schedule::BlockingSchedule>
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\runtime\task\core.rs:331
+  45: tokio::loom::std::unsafe_cell::UnsafeCell<enum2$<tokio::runtime::task::core::Stage<tokio::runtime::blocking::task::BlockingTask<test_r_core::tokio::async_test_runner::async_fn$0::closure_env$0> > > >::with_mut
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\loom\std\unsafe_cell.rs:16
+  46: tokio::runtime::task::core::Core<tokio::runtime::blocking::task::BlockingTask<test_r_core::tokio::async_test_runner::async_fn$0::closure_env$0>,tokio::runtime::blocking::schedule::BlockingSchedule>::poll<tokio::runtime::blocking::task::BlockingTask<test_r_
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\runtime\task\core.rs:320
+  47: tokio::runtime::task::harness::poll_future::closure$0<tokio::runtime::blocking::task::BlockingTask<test_r_core::tokio::async_test_runner::async_fn$0::closure_env$0>,tokio::runtime::blocking::schedule::BlockingSchedule>
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\runtime\task\harness.rs:532
+  48: core::panic::unwind_safe::impl$25::call_once<enum2$<core::task::poll::Poll<tuple$<> > >,tokio::runtime::task::harness::poll_future::closure_env$0<tokio::runtime::blocking::task::BlockingTask<test_r_core::tokio::async_test_runner::async_fn$0::closure_env$0>
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\core\src\panic\unwind_safe.rs:272
+  49: std::panicking::try::do_call<core::panic::unwind_safe::AssertUnwindSafe<tokio::runtime::task::harness::poll_future::closure_env$0<tokio::runtime::blocking::task::BlockingTask<test_r_core::tokio::async_test_runner::async_fn$0::closure_env$0>,tokio::runtime:
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\std\src\panicking.rs:589
+  50: test_r_core::execution::impl$2::get
+  51: std::panicking::try
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\std\src\panicking.rs:552
+  52: std::panic::catch_unwind<core::panic::unwind_safe::AssertUnwindSafe<tokio::runtime::task::harness::poll_future::closure_env$0<tokio::runtime::blocking::task::BlockingTask<test_r_core::tokio::async_test_runner::async_fn$0::closure_env$0>,tokio::runtime::blo
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\std\src\panic.rs:359
+  53: tokio::runtime::task::harness::poll_future<tokio::runtime::blocking::task::BlockingTask<test_r_core::tokio::async_test_runner::async_fn$0::closure_env$0>,tokio::runtime::blocking::schedule::BlockingSchedule>
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\runtime\task\harness.rs:520
+  54: tokio::runtime::task::harness::Harness<tokio::runtime::blocking::task::BlockingTask<test_r_core::tokio::async_test_runner::async_fn$0::closure_env$0>,tokio::runtime::blocking::schedule::BlockingSchedule>::poll_inner<tokio::runtime::blocking::task::Blocking
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\runtime\task\harness.rs:209
+  55: tokio::runtime::task::harness::Harness<tokio::runtime::blocking::task::BlockingTask<test_r_core::tokio::async_test_runner::async_fn$0::closure_env$0>,tokio::runtime::blocking::schedule::BlockingSchedule>::poll<tokio::runtime::blocking::task::BlockingTask<t
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\runtime\task\harness.rs:154
+  56: tokio::runtime::task::raw::poll<tokio::runtime::blocking::task::BlockingTask<test_r_core::tokio::async_test_runner::async_fn$0::closure_env$0>,tokio::runtime::blocking::schedule::BlockingSchedule>
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\runtime\task\raw.rs:271
+  57: tokio::runtime::task::raw::RawTask::poll
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\runtime\task\raw.rs:201
+  58: tokio::runtime::task::UnownedTask<tokio::runtime::blocking::schedule::BlockingSchedule>::run<tokio::runtime::blocking::schedule::BlockingSchedule>
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\runtime\task\mod.rs:500
+  59: tokio::runtime::blocking::pool::Task::run
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\runtime\blocking\pool.rs:161
+  60: tokio::runtime::blocking::pool::Inner::run
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\runtime\blocking\pool.rs:511
+  61: tokio::runtime::blocking::pool::impl$6::spawn_thread::closure$0
+             at C:\Users\laz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\tokio-1.44.1\src\runtime\blocking\pool.rs:469
+  62: core::hint::black_box
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\core\src\hint.rs:477
+  63: std::sys::backtrace::__rust_begin_short_backtrace<tokio::runtime::blocking::pool::impl$6::spawn_thread::closure_env$0,tuple$<> >
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\std\src\sys\backtrace.rs:152
+  64: std::thread::impl$0::spawn_unchecked_::closure$1::closure$0<tokio::runtime::blocking::pool::impl$6::spawn_thread::closure_env$0,tuple$<> >
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\std\src\thread\mod.rs:559
+  65: core::panic::unwind_safe::impl$25::call_once<tuple$<>,std::thread::impl$0::spawn_unchecked_::closure$1::closure_env$0<tokio::runtime::blocking::pool::impl$6::spawn_thread::closure_env$0,tuple$<> > >
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\core\src\panic\unwind_safe.rs:272
+  66: std::panicking::try::do_call<core::panic::unwind_safe::AssertUnwindSafe<std::thread::impl$0::spawn_unchecked_::closure$1::closure_env$0<tokio::runtime::blocking::pool::impl$6::spawn_thread::closure_env$0,tuple$<> > >,tuple$<> >
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\std\src\panicking.rs:589
+  67: tokio::runtime::io::driver::Direction::mask
+  68: std::panicking::try
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\std\src\panicking.rs:552
+  69: std::panic::catch_unwind
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\std\src\panic.rs:359
+  70: std::thread::impl$0::spawn_unchecked_::closure$1<tokio::runtime::blocking::pool::impl$6::spawn_thread::closure_env$0,tuple$<> >
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\std\src\thread\mod.rs:557
+  71: core::ops::function::FnOnce::call_once<std::thread::impl$0::spawn_unchecked_::closure_env$1<tokio::runtime::blocking::pool::impl$6::spawn_thread::closure_env$0,tuple$<> >,tuple$<> >
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359\library\core\src\ops\function.rs:250
+  72: alloc::boxed::impl$28::call_once
+             at /rustc/17067e9ac6d7ecb70e50f92c1944e545188d2359/library\alloc\src\boxed.rs:1966
+error: test failed, to rerun pass `-p golem-component-service-base --test tests`
+
+Caused by:
+  process didn't exit successfully: `P:\work\golem\target\debug\deps\tests-ef6d885cb08af217.exe --format=pretty --skip 'tests::all::repo::sqlite::'` (exit code: 1)

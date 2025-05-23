@@ -1,0 +1,1066 @@
+﻿2025-05-23T14:44:36.8212080Z Current runner version: '2.324.0'
+2025-05-23T14:44:36.8248856Z ##[group]Operating System
+2025-05-23T14:44:36.8250172Z Ubuntu
+2025-05-23T14:44:36.8250988Z 22.04.5
+2025-05-23T14:44:36.8251726Z LTS
+2025-05-23T14:44:36.8252564Z ##[endgroup]
+2025-05-23T14:44:36.8253379Z ##[group]Runner Image
+2025-05-23T14:44:36.8254439Z Image: ubuntu-22.04
+2025-05-23T14:44:36.8255384Z Version: 20250511.1.0
+2025-05-23T14:44:36.8257479Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20250511.1/images/ubuntu/Ubuntu2204-Readme.md
+2025-05-23T14:44:36.8260019Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20250511.1
+2025-05-23T14:44:36.8261683Z ##[endgroup]
+2025-05-23T14:44:36.8262540Z ##[group]Runner Image Provisioner
+2025-05-23T14:44:36.8263484Z 2.0.437.1
+2025-05-23T14:44:36.8264390Z ##[endgroup]
+2025-05-23T14:44:36.8266533Z ##[group]GITHUB_TOKEN Permissions
+2025-05-23T14:44:36.8269189Z Checks: write
+2025-05-23T14:44:36.8270055Z Metadata: read
+2025-05-23T14:44:36.8271158Z PullRequests: write
+2025-05-23T14:44:36.8272280Z ##[endgroup]
+2025-05-23T14:44:36.8275371Z Secret source: Actions
+2025-05-23T14:44:36.8276933Z Prepare workflow directory
+2025-05-23T14:44:36.8852569Z Prepare all required actions
+2025-05-23T14:44:36.8910206Z Getting action download info
+2025-05-23T14:44:37.1794968Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-05-23T14:44:37.1796190Z Version: 4.2.2
+2025-05-23T14:44:37.1797202Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-05-23T14:44:37.1798434Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-05-23T14:44:37.1799114Z ##[endgroup]
+2025-05-23T14:44:37.2528621Z Download action repository 'useblacksmith/rust-cache@v3' (SHA:f53e7f127245d2a269b3d90879ccf259876842d5)
+2025-05-23T14:44:37.4753622Z Download action repository 'davidB/rust-cargo-make@v1' (SHA:1247cd796b78d1dc0d830cbcb07f3d23e1fe862d)
+2025-05-23T14:44:37.6965318Z Download action repository 'arduino/setup-protoc@v3' (SHA:c65c819552d16ad3c9b72d9dfd5ba5237b9c906b)
+2025-05-23T14:44:38.0219833Z Complete job name: build (ubuntu-22.04)
+2025-05-23T14:44:38.0989004Z ##[group]Run actions/checkout@v4
+2025-05-23T14:44:38.0990210Z with:
+2025-05-23T14:44:38.0990842Z   fetch-depth: 1
+2025-05-23T14:44:38.0991537Z   submodules: recursive
+2025-05-23T14:44:38.0992302Z   repository: laz-001/golem
+2025-05-23T14:44:38.0993347Z   token: ***
+2025-05-23T14:44:38.0994009Z   ssh-strict: true
+2025-05-23T14:44:38.0994687Z   ssh-user: git
+2025-05-23T14:44:38.0995399Z   persist-credentials: true
+2025-05-23T14:44:38.0996481Z   clean: true
+2025-05-23T14:44:38.0997180Z   sparse-checkout-cone-mode: true
+2025-05-23T14:44:38.0998060Z   fetch-tags: false
+2025-05-23T14:44:38.0998770Z   show-progress: true
+2025-05-23T14:44:38.0999476Z   lfs: false
+2025-05-23T14:44:38.1000132Z   set-safe-directory: true
+2025-05-23T14:44:38.1001143Z env:
+2025-05-23T14:44:38.1001819Z   BUILD_TARGET: x86_64-unknown-linux-gnu
+2025-05-23T14:44:38.1002758Z   CARGO_BUILD_JOBS: 10
+2025-05-23T14:44:38.1003479Z ##[endgroup]
+2025-05-23T14:44:38.2988320Z Syncing repository: laz-001/golem
+2025-05-23T14:44:38.2990968Z ##[group]Getting Git version info
+2025-05-23T14:44:38.2992249Z Working directory is '/home/runner/work/golem/golem'
+2025-05-23T14:44:38.2993963Z [command]/usr/bin/git version
+2025-05-23T14:44:38.3018458Z git version 2.49.0
+2025-05-23T14:44:38.3047563Z ##[endgroup]
+2025-05-23T14:44:38.3061507Z Temporarily overriding HOME='/home/runner/work/_temp/47bb17d3-c4ce-4686-b3b7-829420140418' before making global git config changes
+2025-05-23T14:44:38.3064378Z Adding repository directory to the temporary git global config as a safe directory
+2025-05-23T14:44:38.3073963Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/golem/golem
+2025-05-23T14:44:38.3108330Z Deleting the contents of '/home/runner/work/golem/golem'
+2025-05-23T14:44:38.3112173Z ##[group]Initializing the repository
+2025-05-23T14:44:38.3116203Z [command]/usr/bin/git init /home/runner/work/golem/golem
+2025-05-23T14:44:38.3176871Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-05-23T14:44:38.3179689Z hint: is subject to change. To configure the initial branch name to use in all
+2025-05-23T14:44:38.3182480Z hint: of your new repositories, which will suppress this warning, call:
+2025-05-23T14:44:38.3183929Z hint:
+2025-05-23T14:44:38.3184740Z hint: 	git config --global init.defaultBranch <name>
+2025-05-23T14:44:38.3185991Z hint:
+2025-05-23T14:44:38.3187043Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-05-23T14:44:38.3189121Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-05-23T14:44:38.3190486Z hint:
+2025-05-23T14:44:38.3191180Z hint: 	git branch -m <name>
+2025-05-23T14:44:38.3192650Z Initialized empty Git repository in /home/runner/work/golem/golem/.git/
+2025-05-23T14:44:38.3195605Z [command]/usr/bin/git remote add origin https://github.com/laz-001/golem
+2025-05-23T14:44:38.3230627Z ##[endgroup]
+2025-05-23T14:44:38.3231934Z ##[group]Disabling automatic garbage collection
+2025-05-23T14:44:38.3234035Z [command]/usr/bin/git config --local gc.auto 0
+2025-05-23T14:44:38.3262406Z ##[endgroup]
+2025-05-23T14:44:38.3263519Z ##[group]Setting up auth
+2025-05-23T14:44:38.3268710Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-05-23T14:44:38.3299226Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-05-23T14:44:38.3603035Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-05-23T14:44:38.3633141Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-05-23T14:44:38.3858121Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-05-23T14:44:38.3895322Z ##[endgroup]
+2025-05-23T14:44:38.3897176Z ##[group]Fetching the repository
+2025-05-23T14:44:38.3906321Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +43cc829998debac20ed948fefb635e2132a8610d:refs/remotes/origin/ci-windows
+2025-05-23T14:44:48.6866100Z From https://github.com/laz-001/golem
+2025-05-23T14:44:48.6867177Z  * [new ref]         43cc829998debac20ed948fefb635e2132a8610d -> origin/ci-windows
+2025-05-23T14:44:48.6892853Z ##[endgroup]
+2025-05-23T14:44:48.6893467Z ##[group]Determining the checkout info
+2025-05-23T14:44:48.6895178Z ##[endgroup]
+2025-05-23T14:44:48.6901579Z [command]/usr/bin/git sparse-checkout disable
+2025-05-23T14:44:48.6941375Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-05-23T14:44:48.6970112Z ##[group]Checking out the ref
+2025-05-23T14:44:48.6974717Z [command]/usr/bin/git checkout --progress --force -B ci-windows refs/remotes/origin/ci-windows
+2025-05-23T14:44:49.7134236Z Updating files:  79% (2597/3270)
+2025-05-23T14:44:49.7148877Z Updating files:  80% (2616/3270)
+2025-05-23T14:44:49.7224662Z Updating files:  81% (2649/3270)
+2025-05-23T14:44:49.7240775Z Updating files:  82% (2682/3270)
+2025-05-23T14:44:49.7653840Z Updating files:  83% (2715/3270)
+2025-05-23T14:44:49.7670906Z Updating files:  84% (2747/3270)
+2025-05-23T14:44:49.7703290Z Updating files:  85% (2780/3270)
+2025-05-23T14:44:49.7724781Z Updating files:  86% (2813/3270)
+2025-05-23T14:44:49.7746508Z Updating files:  87% (2845/3270)
+2025-05-23T14:44:49.7761681Z Updating files:  88% (2878/3270)
+2025-05-23T14:44:49.7779363Z Updating files:  89% (2911/3270)
+2025-05-23T14:44:49.7794151Z Updating files:  90% (2943/3270)
+2025-05-23T14:44:49.7928430Z Updating files:  91% (2976/3270)
+2025-05-23T14:44:49.7941569Z Updating files:  92% (3009/3270)
+2025-05-23T14:44:49.7977623Z Updating files:  93% (3042/3270)
+2025-05-23T14:44:49.8009821Z Updating files:  94% (3074/3270)
+2025-05-23T14:44:49.8045979Z Updating files:  95% (3107/3270)
+2025-05-23T14:44:49.8361141Z Updating files:  96% (3140/3270)
+2025-05-23T14:44:49.8456589Z Updating files:  97% (3172/3270)
+2025-05-23T14:44:49.8471815Z Updating files:  98% (3205/3270)
+2025-05-23T14:44:49.8485483Z Updating files:  99% (3238/3270)
+2025-05-23T14:44:49.8486443Z Updating files: 100% (3270/3270)
+2025-05-23T14:44:49.8486987Z Updating files: 100% (3270/3270), done.
+2025-05-23T14:44:49.8535031Z Switched to a new branch 'ci-windows'
+2025-05-23T14:44:49.8538609Z branch 'ci-windows' set up to track 'origin/ci-windows'.
+2025-05-23T14:44:49.8584294Z ##[endgroup]
+2025-05-23T14:44:49.8584912Z ##[group]Setting up auth for fetching submodules
+2025-05-23T14:44:49.8594119Z [command]/usr/bin/git config --global http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-05-23T14:44:49.8637125Z [command]/usr/bin/git config --global --unset-all url.https://github.com/.insteadOf
+2025-05-23T14:44:49.8669822Z [command]/usr/bin/git config --global --add url.https://github.com/.insteadOf git@github.com:
+2025-05-23T14:44:49.8702821Z [command]/usr/bin/git config --global --add url.https://github.com/.insteadOf org-194351703@github.com:
+2025-05-23T14:44:49.8731951Z ##[endgroup]
+2025-05-23T14:44:49.8732695Z ##[group]Fetching submodules
+2025-05-23T14:44:49.8738084Z [command]/usr/bin/git submodule sync --recursive
+2025-05-23T14:44:49.8992986Z [command]/usr/bin/git -c protocol.version=2 submodule update --init --force --depth=1 --recursive
+2025-05-23T14:44:49.9227420Z [command]/usr/bin/git submodule foreach --recursive git config --local gc.auto 0
+2025-05-23T14:44:49.9452427Z ##[endgroup]
+2025-05-23T14:44:49.9458583Z ##[group]Persisting credentials for submodules
+2025-05-23T14:44:49.9459997Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'url\.https\:\/\/github\.com\/\.insteadOf' && git config --local --unset-all 'url.https://github.com/.insteadOf' || :"
+2025-05-23T14:44:49.9698353Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local 'http.https://github.com/.extraheader' 'AUTHORIZATION: basic ***' && git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2025-05-23T14:44:49.9926583Z [command]/usr/bin/git submodule foreach --recursive git config --local --add 'url.https://github.com/.insteadOf' 'git@github.com:'
+2025-05-23T14:44:50.0153315Z [command]/usr/bin/git submodule foreach --recursive git config --local --add 'url.https://github.com/.insteadOf' 'org-194351703@github.com:'
+2025-05-23T14:44:50.0380801Z ##[endgroup]
+2025-05-23T14:44:50.0418750Z [command]/usr/bin/git log -1 --format=%H
+2025-05-23T14:44:50.0440834Z 43cc829998debac20ed948fefb635e2132a8610d
+2025-05-23T14:44:50.0601201Z ##[group]Run git fetch origin --deepen=1
+2025-05-23T14:44:50.0601598Z [36;1mgit fetch origin --deepen=1[0m
+2025-05-23T14:44:50.0720026Z shell: /usr/bin/bash -e {0}
+2025-05-23T14:44:50.0720392Z env:
+2025-05-23T14:44:50.0720704Z   BUILD_TARGET: x86_64-unknown-linux-gnu
+2025-05-23T14:44:50.0721175Z   CARGO_BUILD_JOBS: 10
+2025-05-23T14:44:50.0721493Z ##[endgroup]
+2025-05-23T14:45:21.2681382Z From https://github.com/laz-001/golem
+2025-05-23T14:45:21.2682070Z  * [new branch]        contrib-update -> origin/contrib-update
+2025-05-23T14:45:21.2682624Z  * [new branch]        main           -> origin/main
+2025-05-23T14:45:21.2752802Z ##[group]Run rustup update stable --no-self-update && rustup default stable
+2025-05-23T14:45:21.2753579Z [36;1mrustup update stable --no-self-update && rustup default stable[0m
+2025-05-23T14:45:21.2799844Z shell: /usr/bin/bash -e {0}
+2025-05-23T14:45:21.2800250Z env:
+2025-05-23T14:45:21.2800703Z   BUILD_TARGET: x86_64-unknown-linux-gnu
+2025-05-23T14:45:21.2801134Z   CARGO_BUILD_JOBS: 10
+2025-05-23T14:45:21.2801506Z ##[endgroup]
+2025-05-23T14:45:23.2096104Z info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
+2025-05-23T14:45:23.4447008Z info: latest update on 2025-05-15, rust version 1.87.0 (17067e9ac 2025-05-09)
+2025-05-23T14:45:23.4966859Z info: downloading component 'clippy'
+2025-05-23T14:45:23.5522326Z info: downloading component 'rustfmt'
+2025-05-23T14:45:23.6027422Z info: downloading component 'cargo'
+2025-05-23T14:45:23.6897402Z info: downloading component 'rust-std'
+2025-05-23T14:45:23.8763774Z info: downloading component 'rustc'
+2025-05-23T14:45:24.3072616Z info: removing previous version of component 'clippy'
+2025-05-23T14:45:24.3079179Z info: removing previous version of component 'rustfmt'
+2025-05-23T14:45:24.3085826Z info: removing previous version of component 'cargo'
+2025-05-23T14:45:24.3111655Z info: removing previous version of component 'rust-std'
+2025-05-23T14:45:24.3132609Z info: removing previous version of component 'rustc'
+2025-05-23T14:45:24.3164945Z info: installing component 'clippy'
+2025-05-23T14:45:24.5971461Z info: installing component 'rustfmt'
+2025-05-23T14:45:24.8528036Z info: installing component 'cargo'
+2025-05-23T14:45:25.4990264Z info: installing component 'rust-std'
+2025-05-23T14:45:27.4661608Z info: installing component 'rustc'
+2025-05-23T14:45:32.1333222Z 
+2025-05-23T14:45:32.1434369Z   stable-x86_64-unknown-linux-gnu updated - rustc 1.87.0 (17067e9ac 2025-05-09) (from rustc 1.86.0 (05f9846f8 2025-03-31))
+2025-05-23T14:45:32.1435214Z 
+2025-05-23T14:45:32.1524871Z info: using existing install for 'stable-x86_64-unknown-linux-gnu'
+2025-05-23T14:45:32.1831613Z info: default toolchain set to 'stable-x86_64-unknown-linux-gnu'
+2025-05-23T14:45:32.1832269Z 
+2025-05-23T14:45:32.1925178Z   stable-x86_64-unknown-linux-gnu unchanged - rustc 1.87.0 (17067e9ac 2025-05-09)
+2025-05-23T14:45:32.1925618Z 
+2025-05-23T14:45:32.2072496Z ##[group]Run useblacksmith/rust-cache@v3
+2025-05-23T14:45:32.2072786Z with:
+2025-05-23T14:45:32.2072963Z   prefix-key: v2-rust
+2025-05-23T14:45:32.2073167Z   shared-key: debug
+2025-05-23T14:45:32.2073359Z   cache-all-crates: true
+2025-05-23T14:45:32.2073571Z   save-if: true
+2025-05-23T14:45:32.2073752Z   cache-targets: true
+2025-05-23T14:45:32.2073957Z   cache-provider: blacksmith
+2025-05-23T14:45:32.2074171Z   cache-bin: true
+2025-05-23T14:45:32.2074369Z   lookup-only: false
+2025-05-23T14:45:32.2074551Z env:
+2025-05-23T14:45:32.2074737Z   BUILD_TARGET: x86_64-unknown-linux-gnu
+2025-05-23T14:45:32.2074996Z   CARGO_BUILD_JOBS: 10
+2025-05-23T14:45:32.2075185Z ##[endgroup]
+2025-05-23T14:45:33.0001479Z ##[group]Cache Configuration
+2025-05-23T14:45:33.0001922Z Cache Provider:
+2025-05-23T14:45:33.0002232Z     blacksmith
+2025-05-23T14:45:33.0002514Z Workspaces:
+2025-05-23T14:45:33.0002813Z     /home/runner/work/golem/golem
+2025-05-23T14:45:33.0003186Z Cache Paths:
+2025-05-23T14:45:33.0003570Z     /home/runner/.cargo/bin
+2025-05-23T14:45:33.0003929Z     /home/runner/.cargo/.crates.toml
+2025-05-23T14:45:33.0004352Z     /home/runner/.cargo/.crates2.json
+2025-05-23T14:45:33.0004775Z     /home/runner/.cargo/registry
+2025-05-23T14:45:33.0005143Z     /home/runner/.cargo/git
+2025-05-23T14:45:33.0005514Z     /home/runner/work/golem/golem/target
+2025-05-23T14:45:33.0006269Z Restore Key:
+2025-05-23T14:45:33.0006658Z     v2-rust-debug-Linux-517caac4
+2025-05-23T14:45:33.0007093Z Cache Key:
+2025-05-23T14:45:33.0007379Z     v2-rust-debug-Linux-517caac4-67524106
+2025-05-23T14:45:33.0007786Z .. Prefix:
+2025-05-23T14:45:33.0008078Z   - v2-rust-debug-Linux
+2025-05-23T14:45:33.0008469Z .. Environment considered:
+2025-05-23T14:45:33.0009133Z   - Rust Version: 1.87.0 x86_64-unknown-linux-gnu (17067e9ac6d7ecb70e50f92c1944e545188d2359)
+2025-05-23T14:45:33.0009792Z   - CARGO_BUILD_JOBS
+2025-05-23T14:45:33.0010123Z   - CARGO_INCREMENTAL
+2025-05-23T14:45:33.0010474Z .. Lockfiles considered:
+2025-05-23T14:45:33.0010868Z   - /home/runner/work/golem/golem/Cargo.lock
+2025-05-23T14:45:33.0011431Z   - /home/runner/work/golem/golem/golem-api-grpc/Cargo.toml
+2025-05-23T14:45:33.0012039Z   - /home/runner/work/golem/golem/golem-client/Cargo.toml
+2025-05-23T14:45:33.0012643Z   - /home/runner/work/golem/golem/golem-common/Cargo.toml
+2025-05-23T14:45:33.0013368Z   - /home/runner/work/golem/golem/golem-component-compilation-service/Cargo.toml
+2025-05-23T14:45:33.0014605Z   - /home/runner/work/golem/golem/golem-component-service-base/Cargo.toml
+2025-05-23T14:45:33.0015373Z   - /home/runner/work/golem/golem/golem-component-service/Cargo.toml
+2025-05-23T14:45:33.0016257Z   - /home/runner/work/golem/golem/golem-rib-repl/Cargo.toml
+2025-05-23T14:45:33.0016846Z   - /home/runner/work/golem/golem/golem-rib/Cargo.toml
+2025-05-23T14:45:33.0017500Z   - /home/runner/work/golem/golem/golem-service-base/Cargo.toml
+2025-05-23T14:45:33.0018180Z   - /home/runner/work/golem/golem/golem-shard-manager/Cargo.toml
+2025-05-23T14:45:33.0018882Z   - /home/runner/work/golem/golem/golem-test-framework/Cargo.toml
+2025-05-23T14:45:33.0019633Z   - /home/runner/work/golem/golem/golem-worker-executor-base/Cargo.toml
+2025-05-23T14:45:33.0020392Z   - /home/runner/work/golem/golem/golem-worker-executor/Cargo.toml
+2025-05-23T14:45:33.0021123Z   - /home/runner/work/golem/golem/golem-worker-service-base/Cargo.toml
+2025-05-23T14:45:33.0021871Z   - /home/runner/work/golem/golem/golem-worker-service/Cargo.toml
+2025-05-23T14:45:33.0022554Z   - /home/runner/work/golem/golem/integration-tests/Cargo.toml
+2025-05-23T14:45:33.0023170Z   - /home/runner/work/golem/golem/wasm-ast/Cargo.toml
+2025-05-23T14:45:33.0023762Z   - /home/runner/work/golem/golem/wasm-rpc-derive/Cargo.toml
+2025-05-23T14:45:33.0024345Z   - /home/runner/work/golem/golem/wasm-rpc/Cargo.toml
+2025-05-23T14:45:33.0025065Z ##[endgroup]
+2025-05-23T14:45:33.0025248Z 
+2025-05-23T14:45:33.0025387Z ... Restoring cache ...
+2025-05-23T14:45:33.0081106Z Checking cache for keys v2-rust-debug-Linux-517caac4-67524106,v2-rust-debug-Linux-517caac4 and version 851c9b4437b4343edcbd2dfcc55bec8245eee7f5dde613b5ae602389a6a26ec2
+2025-05-23T14:45:33.3781590Z ##[warning]Failed to restore: Cache service responded with 401
+2025-05-23T14:45:33.3791365Z Reporting failure to api.blacksmith.sh
+2025-05-23T14:45:33.3792315Z ##[warning]Failed to report failure to api.blacksmith.sh
+2025-05-23T14:45:33.3793350Z No cache found.
+2025-05-23T14:45:33.3899225Z ##[group]Run davidB/rust-cargo-make@v1
+2025-05-23T14:45:33.3899509Z with:
+2025-05-23T14:45:33.3899666Z   version: latest
+2025-05-23T14:45:33.3899851Z   fallback_version: 0.37.23
+2025-05-23T14:45:33.3900181Z   github_token: ***
+2025-05-23T14:45:33.3900358Z env:
+2025-05-23T14:45:33.3900534Z   BUILD_TARGET: x86_64-unknown-linux-gnu
+2025-05-23T14:45:33.3900768Z   CARGO_BUILD_JOBS: 10
+2025-05-23T14:45:33.3900958Z   CACHE_ON_FAILURE: false
+2025-05-23T14:45:33.3901147Z   CARGO_INCREMENTAL: 0
+2025-05-23T14:45:33.3901330Z ##[endgroup]
+2025-05-23T14:45:33.4649166Z search latest version of cargo-make
+2025-05-23T14:45:33.6349212Z installing cargo-make 0.37.24 ...
+2025-05-23T14:45:33.6359326Z downloading (0.37.24) from https://github.com/sagiegurari/cargo-make/releases/download/0.37.24/cargo-make-v0.37.24-x86_64-unknown-linux-musl.zip
+2025-05-23T14:45:33.8538799Z [command]/usr/bin/unzip -o -q /home/runner/work/_temp/9ce699b9-7599-44ce-a357-6ff960f9f84d
+2025-05-23T14:45:34.0830191Z done
+2025-05-23T14:45:34.0953875Z ##[group]Run arduino/setup-protoc@v3
+2025-05-23T14:45:34.0954353Z with:
+2025-05-23T14:45:34.0954867Z   repo-token: ***
+2025-05-23T14:45:34.0955050Z   version: 23.x
+2025-05-23T14:45:34.0955235Z   include-pre-releases: false
+2025-05-23T14:45:34.0955437Z env:
+2025-05-23T14:45:34.0955609Z   BUILD_TARGET: x86_64-unknown-linux-gnu
+2025-05-23T14:45:34.0956061Z   CARGO_BUILD_JOBS: 10
+2025-05-23T14:45:34.0956494Z   CACHE_ON_FAILURE: false
+2025-05-23T14:45:34.0956719Z   CARGO_INCREMENTAL: 0
+2025-05-23T14:45:34.0956897Z ##[endgroup]
+2025-05-23T14:45:36.8494526Z Getting protoc version: v23.4
+2025-05-23T14:45:36.8507340Z Downloading archive: https://github.com/protocolbuffers/protobuf/releases/download/v23.4/protoc-23.4-linux-x86_64.zip
+2025-05-23T14:45:37.0304556Z [command]/usr/bin/unzip -o -q /home/runner/work/_temp/91d46006-8fb4-4473-b014-e26932b2d271
+2025-05-23T14:45:37.1190672Z Protoc cached under /opt/hostedtoolcache/protoc/v23.4/x64
+2025-05-23T14:45:37.1330244Z ##[group]Run cargo make --profile ci build
+2025-05-23T14:45:37.1330580Z [36;1mcargo make --profile ci build[0m
+2025-05-23T14:45:37.1382250Z shell: /usr/bin/bash -e {0}
+2025-05-23T14:45:37.1382487Z env:
+2025-05-23T14:45:37.1382677Z   BUILD_TARGET: x86_64-unknown-linux-gnu
+2025-05-23T14:45:37.1382959Z   CARGO_BUILD_JOBS: 10
+2025-05-23T14:45:37.1383160Z   CACHE_ON_FAILURE: false
+2025-05-23T14:45:37.1383377Z   CARGO_INCREMENTAL: 0
+2025-05-23T14:45:37.1383562Z   QUIET: true
+2025-05-23T14:45:37.1383744Z ##[endgroup]
+2025-05-23T14:45:37.1952868Z [cargo-make] INFO - cargo make 0.37.24
+2025-05-23T14:46:01.4115396Z [cargo-make] INFO - 
+2025-05-23T14:46:01.4116003Z [cargo-make] INFO - Build File: Makefile.toml
+2025-05-23T14:46:01.4116310Z [cargo-make] INFO - Task: build
+2025-05-23T14:46:01.4116539Z [cargo-make] INFO - Profile: ci
+2025-05-23T14:46:01.4116878Z [cargo-make] INFO - Skipping Task: wit 
+2025-05-23T14:46:01.4117286Z [cargo-make] INFO - Running Task: build
+2025-05-23T14:46:01.4577803Z [cargo-make] INFO - Execute Command: "cargo" "build" "--workspace" "--all-targets"
+2025-05-23T14:46:02.2971138Z    Compiling proc-macro2 v1.0.94
+2025-05-23T14:46:02.2971737Z    Compiling unicode-ident v1.0.18
+2025-05-23T14:46:02.2972267Z    Compiling serde v1.0.219
+2025-05-23T14:46:02.2972738Z    Compiling libc v0.2.171
+2025-05-23T14:46:02.2973186Z    Compiling cfg-if v1.0.0
+2025-05-23T14:46:02.2973623Z    Compiling autocfg v1.4.0
+2025-05-23T14:46:02.2974087Z    Compiling memchr v2.7.4
+2025-05-23T14:46:02.2974556Z    Compiling version_check v0.9.5
+2025-05-23T14:46:02.3026044Z    Compiling once_cell v1.21.0
+2025-05-23T14:46:02.3026908Z    Compiling itoa v1.0.15
+2025-05-23T14:46:02.3766855Z    Compiling pin-project-lite v0.2.16
+2025-05-23T14:46:02.4417565Z    Compiling bytes v1.10.1
+2025-05-23T14:46:02.5160349Z    Compiling futures-core v0.3.31
+2025-05-23T14:46:02.5407199Z    Compiling foldhash v0.1.4
+2025-05-23T14:46:02.7037916Z    Compiling allocator-api2 v0.2.21
+2025-05-23T14:46:02.7890404Z    Compiling equivalent v1.0.2
+2025-05-23T14:46:02.8204705Z    Compiling futures-io v0.3.31
+2025-05-23T14:46:02.8708497Z    Compiling zeroize v1.8.1
+2025-05-23T14:46:02.9067391Z    Compiling parking_lot_core v0.9.10
+2025-05-23T14:46:03.1271981Z    Compiling lock_api v0.4.12
+2025-05-23T14:46:03.1432083Z    Compiling slab v0.4.9
+2025-05-23T14:46:03.2417390Z    Compiling scopeguard v1.2.0
+2025-05-23T14:46:03.3150257Z    Compiling ryu v1.0.20
+2025-05-23T14:46:03.3689459Z    Compiling pin-utils v0.1.0
+2025-05-23T14:46:03.4648933Z    Compiling log v0.4.26
+2025-05-23T14:46:03.4907869Z    Compiling futures-sink v0.3.31
+2025-05-23T14:46:03.6623912Z    Compiling fnv v1.0.7
+2025-05-23T14:46:03.7141256Z    Compiling shlex v1.3.0
+2025-05-23T14:46:03.7905186Z    Compiling futures-channel v0.3.31
+2025-05-23T14:46:03.8516941Z    Compiling futures-task v0.3.31
+2025-05-23T14:46:03.9705261Z    Compiling libm v0.2.11
+2025-05-23T14:46:04.0257204Z    Compiling const-oid v0.9.6
+2025-05-23T14:46:04.0587262Z    Compiling subtle v2.6.1
+2025-05-23T14:46:04.0666202Z    Compiling typenum v1.18.0
+2025-05-23T14:46:04.1330177Z    Compiling generic-array v0.14.7
+2025-05-23T14:46:04.2274812Z    Compiling quote v1.0.40
+2025-05-23T14:46:04.2688540Z    Compiling tracing-core v0.1.33
+2025-05-23T14:46:04.3900471Z    Compiling semver v1.0.26
+2025-05-23T14:46:04.3914730Z    Compiling num-traits v0.2.19
+2025-05-23T14:46:04.5294740Z    Compiling percent-encoding v2.3.1
+2025-05-23T14:46:04.6067468Z    Compiling syn v2.0.100
+2025-05-23T14:46:04.9076447Z    Compiling http v1.3.1
+2025-05-23T14:46:04.9788041Z    Compiling zerocopy v0.8.23
+2025-05-23T14:46:05.0467202Z    Compiling serde_json v1.0.140
+2025-05-23T14:46:05.0496801Z    Compiling cpufeatures v0.2.17
+2025-05-23T14:46:05.1191355Z    Compiling form_urlencoded v1.2.1
+2025-05-23T14:46:05.1533580Z    Compiling anyhow v1.0.97
+2025-05-23T14:46:05.6506759Z    Compiling stable_deref_trait v1.2.0
+2025-05-23T14:46:05.7483552Z    Compiling httparse v1.10.1
+2025-05-23T14:46:05.8036901Z    Compiling writeable v0.5.5
+2025-05-23T14:46:05.9817163Z    Compiling litemap v0.7.5
+2025-05-23T14:46:06.4158174Z    Compiling hashbrown v0.15.2
+2025-05-23T14:46:06.5936545Z    Compiling icu_locid_transform_data v1.5.0
+2025-05-23T14:46:06.7358441Z    Compiling http-body v1.0.1
+2025-05-23T14:46:06.9579051Z    Compiling http-body-util v0.1.3
+2025-05-23T14:46:07.3572510Z    Compiling thiserror v2.0.12
+2025-05-23T14:46:07.4034823Z    Compiling getrandom v0.2.15
+2025-05-23T14:46:07.4318103Z    Compiling signal-hook-registry v1.4.2
+2025-05-23T14:46:07.4320983Z    Compiling mio v1.0.3
+2025-05-23T14:46:07.5713117Z    Compiling socket2 v0.5.8
+2025-05-23T14:46:07.6090149Z    Compiling jobserver v0.1.32
+2025-05-23T14:46:07.8149448Z    Compiling rand_core v0.6.4
+2025-05-23T14:46:08.1896696Z    Compiling cc v1.2.16
+2025-05-23T14:46:08.3113087Z    Compiling tower-service v0.3.3
+2025-05-23T14:46:08.4497579Z    Compiling try-lock v0.2.5
+2025-05-23T14:46:08.4599750Z    Compiling icu_properties_data v1.5.0
+2025-05-23T14:46:08.4922780Z    Compiling crypto-common v0.1.6
+2025-05-23T14:46:08.5202560Z    Compiling block-buffer v0.10.4
+2025-05-23T14:46:08.5369520Z    Compiling linux-raw-sys v0.9.2
+2025-05-23T14:46:08.5837668Z    Compiling httpdate v1.0.3
+2025-05-23T14:46:08.7537355Z    Compiling digest v0.10.7
+2025-05-23T14:46:08.7670141Z    Compiling getrandom v0.3.1
+2025-05-23T14:46:08.7897124Z    Compiling want v0.3.1
+2025-05-23T14:46:09.0325281Z    Compiling utf8_iter v1.0.4
+2025-05-23T14:46:09.0916509Z    Compiling icu_normalizer_data v1.5.0
+2025-05-23T14:46:09.1085971Z    Compiling write16 v1.0.0
+2025-05-23T14:46:09.1183951Z    Compiling utf16_iter v1.0.5
+2025-05-23T14:46:09.1361298Z    Compiling atomic-waker v1.1.2
+2025-05-23T14:46:09.1753065Z    Compiling pkg-config v0.3.32
+2025-05-23T14:46:09.1929571Z    Compiling sha2 v0.10.8
+2025-05-23T14:46:09.2047780Z    Compiling regex-syntax v0.8.5
+2025-05-23T14:46:09.3427463Z    Compiling heck v0.5.0
+2025-05-23T14:46:09.3560107Z    Compiling fastrand v2.3.0
+2025-05-23T14:46:09.7572556Z    Compiling crc32fast v1.4.2
+2025-05-23T14:46:09.8389210Z    Compiling thiserror v1.0.69
+2025-05-23T14:46:09.9606868Z    Compiling openssl-probe v0.1.6
+2025-05-23T14:46:09.9707189Z    Compiling hmac v0.12.1
+2025-05-23T14:46:10.0827759Z    Compiling ppv-lite86 v0.2.21
+2025-05-23T14:46:10.1840318Z    Compiling num-integer v0.1.46
+2025-05-23T14:46:10.2877021Z    Compiling base64 v0.21.7
+2025-05-23T14:46:10.2878024Z    Compiling hex v0.4.3
+2025-05-23T14:46:10.3413696Z    Compiling crossbeam-utils v0.8.21
+2025-05-23T14:46:10.5780412Z    Compiling spin v0.9.8
+2025-05-23T14:46:10.7523672Z    Compiling aho-corasick v1.1.3
+2025-05-23T14:46:10.9246903Z    Compiling num-conv v0.1.0
+2025-05-23T14:46:11.0343793Z    Compiling time-core v0.1.3
+2025-05-23T14:46:11.0398478Z    Compiling base64 v0.22.1
+2025-05-23T14:46:11.1316975Z    Compiling rand_chacha v0.3.1
+2025-05-23T14:46:11.1637414Z    Compiling strsim v0.11.1
+2025-05-23T14:46:11.1854150Z    Compiling powerfmt v0.2.0
+2025-05-23T14:46:11.2421444Z    Compiling time-macros v0.2.20
+2025-05-23T14:46:11.6017118Z    Compiling rand v0.8.5
+2025-05-23T14:46:11.7155548Z    Compiling deranged v0.3.11
+2025-05-23T14:46:12.0185990Z    Compiling iana-time-zone v0.1.61
+2025-05-23T14:46:12.2018111Z    Compiling zerocopy v0.7.35
+2025-05-23T14:46:12.2658573Z    Compiling rustix v1.0.2
+2025-05-23T14:46:12.9199895Z    Compiling rustix v0.38.44
+2025-05-23T14:46:12.9479401Z    Compiling cfg_aliases v0.2.1
+2025-05-23T14:46:13.0208100Z    Compiling sha1_smol v1.0.1
+2025-05-23T14:46:13.3068521Z    Compiling linux-raw-sys v0.4.15
+2025-05-23T14:46:13.4044777Z    Compiling byteorder v1.5.0
+2025-05-23T14:46:13.4587772Z    Compiling vcpkg v0.2.15
+2025-05-23T14:46:13.9129411Z    Compiling mime v0.3.17
+2025-05-23T14:46:13.9257279Z    Compiling memoffset v0.9.1
+2025-05-23T14:46:13.9560502Z    Compiling ahash v0.8.11
+2025-05-23T14:46:14.1259245Z    Compiling base64ct v1.7.1
+2025-05-23T14:46:14.4346646Z    Compiling synstructure v0.13.1
+2025-05-23T14:46:14.4571008Z    Compiling regex-automata v0.4.9
+2025-05-23T14:46:14.9457681Z    Compiling ident_case v1.0.1
+2025-05-23T14:46:15.0956315Z    Compiling darling_core v0.20.10
+2025-05-23T14:46:15.3328318Z    Compiling ring v0.17.14
+2025-05-23T14:46:15.4735545Z    Compiling lazy_static v1.5.0
+2025-05-23T14:46:15.5011268Z    Compiling encoding_rs v0.8.35
+2025-05-23T14:46:15.6015916Z    Compiling leb128 v0.2.5
+2025-05-23T14:46:15.6409990Z    Compiling time v0.3.39
+2025-05-23T14:46:15.8409411Z    Compiling unicode-xid v0.2.6
+2025-05-23T14:46:16.0596742Z    Compiling sync_wrapper v1.0.2
+2025-05-23T14:46:16.2446290Z    Compiling winnow v0.7.4
+2025-05-23T14:46:17.6562268Z    Compiling openssl-sys v0.9.106
+2025-05-23T14:46:18.5464233Z    Compiling wasmparser v0.227.1
+2025-05-23T14:46:18.6090807Z    Compiling adler2 v2.0.0
+2025-05-23T14:46:18.7806447Z    Compiling untrusted v0.9.0
+2025-05-23T14:46:18.9511199Z    Compiling miniz_oxide v0.8.5
+2025-05-23T14:46:18.9617411Z    Compiling serde_derive v1.0.219
+2025-05-23T14:46:19.2075329Z    Compiling futures-macro v0.3.31
+2025-05-23T14:46:19.3370184Z    Compiling tokio-macros v2.5.0
+2025-05-23T14:46:20.2295000Z    Compiling tracing-attributes v0.1.28
+2025-05-23T14:46:20.8747967Z    Compiling zerofrom-derive v0.1.6
+2025-05-23T14:46:20.9450177Z    Compiling yoke-derive v0.7.5
+2025-05-23T14:46:21.1703406Z    Compiling zerovec-derive v0.10.3
+2025-05-23T14:46:21.1825610Z    Compiling displaydoc v0.2.5
+2025-05-23T14:46:22.1148629Z    Compiling futures-util v0.3.31
+2025-05-23T14:46:22.7038570Z    Compiling icu_provider_macros v1.5.0
+2025-05-23T14:46:23.4258925Z    Compiling thiserror-impl v2.0.12
+2025-05-23T14:46:24.3899598Z    Compiling thiserror-impl v1.0.69
+2025-05-23T14:46:24.4032527Z    Compiling tracing v0.1.41
+2025-05-23T14:46:24.4495033Z    Compiling async-trait v0.1.87
+2025-05-23T14:46:24.8977658Z    Compiling regex v1.11.1
+2025-05-23T14:46:24.9455098Z    Compiling darling_macro v0.20.10
+2025-05-23T14:46:25.5076529Z    Compiling zerofrom v0.1.6
+2025-05-23T14:46:25.5954370Z    Compiling hkdf v0.12.4
+2025-05-23T14:46:25.7829770Z    Compiling yoke v0.7.5
+2025-05-23T14:46:25.7922194Z    Compiling id-arena v2.2.1
+2025-05-23T14:46:26.1429039Z    Compiling zerovec v0.10.4
+2025-05-23T14:46:26.1986284Z    Compiling syn v1.0.109
+2025-05-23T14:46:26.2760142Z    Compiling flate2 v1.1.0
+2025-05-23T14:46:26.8318331Z    Compiling darling v0.20.10
+2025-05-23T14:46:26.9418249Z    Compiling nix v0.29.0
+2025-05-23T14:46:27.1135480Z    Compiling tokio v1.44.1
+2025-05-23T14:46:27.7217972Z    Compiling multer v3.1.0
+2025-05-23T14:46:27.8275276Z    Compiling foreign-types-shared v0.1.1
+2025-05-23T14:46:27.9216629Z    Compiling wasm-encoder v0.227.1
+2025-05-23T14:46:27.9930532Z    Compiling openssl v0.10.71
+2025-05-23T14:46:28.3187881Z    Compiling prettyplease v0.2.30
+2025-05-23T14:46:28.4326635Z    Compiling tinystr v0.7.6
+2025-05-23T14:46:28.4414117Z    Compiling icu_collections v1.5.0
+2025-05-23T14:46:28.8046867Z    Compiling icu_locid v1.5.0
+2025-05-23T14:46:28.8114006Z    Compiling unsafe-libyaml v0.2.11
+2025-05-23T14:46:28.9368282Z    Compiling futures-executor v0.3.31
+2025-05-23T14:46:29.4393371Z    Compiling futures v0.3.31
+2025-05-23T14:46:29.5996547Z    Compiling foreign-types v0.3.2
+2025-05-23T14:46:29.6841588Z    Compiling openssl-macros v0.1.1
+2025-05-23T14:46:30.0120365Z    Compiling sha1 v0.10.6
+2025-05-23T14:46:30.3923665Z    Compiling icu_provider v1.5.0
+2025-05-23T14:46:30.8249937Z    Compiling http v0.2.12
+2025-05-23T14:46:31.2060157Z    Compiling leb128fmt v0.1.0
+2025-05-23T14:46:31.4819286Z    Compiling icu_locid_transform v1.5.0
+2025-05-23T14:46:31.5971750Z    Compiling fixedbitset v0.5.7
+2025-05-23T14:46:31.7742017Z    Compiling native-tls v0.2.14
+2025-05-23T14:46:32.0138414Z    Compiling virtue v0.0.13
+2025-05-23T14:46:32.0816038Z    Compiling parking v2.2.1
+2025-05-23T14:46:32.3500505Z    Compiling topological-sort v0.2.2
+2025-05-23T14:46:32.6531799Z    Compiling pin-project-internal v1.1.10
+2025-05-23T14:46:33.4500547Z    Compiling icu_properties v1.5.1
+2025-05-23T14:46:33.8343024Z    Compiling bincode_derive v2.0.0-rc.3
+2025-05-23T14:46:34.4109411Z    Compiling multimap v0.10.0
+2025-05-23T14:46:34.7817538Z    Compiling smallvec v1.14.0
+2025-05-23T14:46:35.0978986Z    Compiling bitflags v2.9.0
+2025-05-23T14:46:35.6594099Z    Compiling either v1.15.0
+2025-05-23T14:46:36.0244877Z    Compiling parking_lot v0.12.3
+2025-05-23T14:46:36.1487194Z    Compiling indexmap v2.8.0
+2025-05-23T14:46:38.0002245Z    Compiling uuid v1.15.1
+2025-05-23T14:46:38.4918464Z    Compiling serde_urlencoded v0.7.1
+2025-05-23T14:46:38.8349900Z    Compiling icu_normalizer v1.5.0
+2025-05-23T14:46:40.0925080Z    Compiling idna_adapter v1.2.0
+2025-05-23T14:46:40.3046806Z    Compiling idna v1.0.3
+2025-05-23T14:46:40.3104475Z    Compiling itertools v0.14.0
+2025-05-23T14:46:41.2387365Z    Compiling url v2.5.4
+2025-05-23T14:46:41.2613788Z    Compiling chrono v0.4.40
+2025-05-23T14:46:42.4514199Z    Compiling hashbrown v0.14.5
+2025-05-23T14:46:43.9298440Z    Compiling petgraph v0.7.1
+2025-05-23T14:46:44.1722455Z    Compiling rustc_version v0.4.1
+2025-05-23T14:46:44.5436654Z    Compiling prost-derive v0.13.5
+2025-05-23T14:46:44.6774612Z    Compiling bytes-utils v0.1.4
+2025-05-23T14:46:45.2096980Z    Compiling pin-project v1.1.10
+2025-05-23T14:46:45.2740827Z    Compiling http-body v0.4.6
+2025-05-23T14:46:46.2788361Z    Compiling tempfile v3.18.0
+2025-05-23T14:46:47.1657095Z    Compiling inout v0.1.4
+2025-05-23T14:46:47.3630121Z    Compiling procfs v0.16.0
+2025-05-23T14:46:47.5072625Z    Compiling tokio-util v0.7.14
+2025-05-23T14:46:47.9220068Z    Compiling pin-project-internal v0.4.30
+2025-05-23T14:46:48.1720832Z    Compiling protobuf v2.28.0
+2025-05-23T14:46:48.6660913Z    Compiling termcolor v1.4.1
+2025-05-23T14:46:49.1044659Z    Compiling h2 v0.4.8
+2025-05-23T14:46:49.1232807Z    Compiling tokio-stream v0.1.17
+2025-05-23T14:46:49.3149979Z    Compiling cipher v0.4.4
+2025-05-23T14:46:49.3396682Z    Compiling wasmparser v0.219.2
+2025-05-23T14:46:49.4797214Z    Compiling prost v0.13.5
+2025-05-23T14:46:50.4566593Z    Compiling prost-types v0.13.5
+2025-05-23T14:46:50.7557212Z    Compiling procfs-core v0.16.0
+2025-05-23T14:46:50.9837912Z    Compiling pem-rfc7468 v0.7.0
+2025-05-23T14:46:51.7506216Z    Compiling universal-hash v0.5.1
+2025-05-23T14:46:51.9594779Z    Compiling uncased v0.9.10
+2025-05-23T14:46:52.4524835Z    Compiling opaque-debug v0.3.1
+2025-05-23T14:46:53.4083247Z    Compiling io-lifetimes v2.0.4
+2025-05-23T14:46:53.5671160Z    Compiling prost-build v0.13.5
+2025-05-23T14:46:54.2035152Z    Compiling glob v0.3.2
+2025-05-23T14:46:54.6138435Z    Compiling cranelift-isle v0.114.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:46:54.8427092Z    Compiling ipnet v2.11.0
+2025-05-23T14:46:55.2714931Z    Compiling prometheus v0.13.4
+2025-05-23T14:46:55.3972917Z    Compiling toml_datetime v0.6.8
+2025-05-23T14:46:55.6898615Z    Compiling tower-layer v0.3.3
+2025-05-23T14:46:55.7547597Z    Compiling toml_edit v0.22.24
+2025-05-23T14:46:55.8782765Z    Compiling tokio-native-tls v0.3.1
+2025-05-23T14:46:56.0154502Z    Compiling polyval v0.6.2
+2025-05-23T14:46:56.2431916Z    Compiling der v0.7.9
+2025-05-23T14:46:56.6166966Z    Compiling serde_yaml v0.9.34+deprecated
+2025-05-23T14:46:57.3134678Z    Compiling cranelift-bitset v0.114.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:46:57.7880368Z    Compiling derive_arbitrary v1.4.1
+2025-05-23T14:47:00.0136943Z    Compiling hyper v1.6.0
+2025-05-23T14:47:00.6843126Z    Compiling wasmtime-versioned-export-macros v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:47:02.3119076Z    Compiling cranelift-codegen-shared v0.114.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:47:02.4934512Z    Compiling target-lexicon v0.12.16
+2025-05-23T14:47:02.7165506Z    Compiling cranelift-codegen-meta v0.114.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:47:03.4727170Z    Compiling hyper-util v0.1.10
+2025-05-23T14:47:03.7457612Z    Compiling pin-project v0.4.30
+2025-05-23T14:47:03.8594223Z    Compiling arbitrary v1.4.1
+2025-05-23T14:47:04.1178749Z    Compiling proc-macro-crate v3.3.0
+2025-05-23T14:47:05.5231626Z    Compiling wasmprinter v0.219.2
+2025-05-23T14:47:06.0761857Z    Compiling spki v0.7.3
+2025-05-23T14:47:06.4090896Z    Compiling cranelift-entity v0.114.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:47:06.5332486Z    Compiling ghash v0.5.1
+2025-05-23T14:47:07.3657422Z    Compiling ctr v0.9.2
+2025-05-23T14:47:07.6274454Z    Compiling aes v0.8.4
+2025-05-23T14:47:07.7115355Z    Compiling gimli v0.31.1
+2025-05-23T14:47:08.9721530Z    Compiling spdx v0.10.8
+2025-05-23T14:47:09.3777739Z    Compiling opentelemetry v0.24.0
+2025-05-23T14:47:10.0470151Z    Compiling zstd-sys v2.0.14+zstd.1.5.7
+2025-05-23T14:47:10.3418304Z    Compiling aead v0.5.2
+2025-05-23T14:47:10.4993536Z    Compiling cookie v0.18.1
+2025-05-23T14:47:10.9747901Z    Compiling data-encoding v2.8.0
+2025-05-23T14:47:11.3928798Z    Compiling io-extras v0.18.4
+2025-05-23T14:47:11.9473289Z    Compiling beef v0.5.2
+2025-05-23T14:47:12.1073189Z    Compiling utf-8 v0.7.6
+2025-05-23T14:47:12.2367305Z    Compiling bytes v0.5.6
+2025-05-23T14:47:12.2997052Z    Compiling bumpalo v3.17.0
+2025-05-23T14:47:12.7709255Z    Compiling tungstenite v0.25.0
+2025-05-23T14:47:13.0871353Z    Compiling futures_codec v0.4.1
+2025-05-23T14:47:13.3348993Z    Compiling logos-codegen v0.14.4
+2025-05-23T14:47:13.5047823Z    Compiling cranelift-codegen v0.114.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:47:13.5713987Z    Compiling opentelemetry_sdk v0.24.1
+2025-05-23T14:47:13.7256479Z    Compiling aes-gcm v0.10.3
+2025-05-23T14:47:14.9038022Z    Compiling pkcs8 v0.10.2
+2025-05-23T14:47:15.5161819Z    Compiling itertools v0.12.1
+2025-05-23T14:47:15.8347624Z    Compiling opentelemetry v0.27.1
+2025-05-23T14:47:15.8698626Z    Compiling crossbeam-epoch v0.9.18
+2025-05-23T14:47:16.3124711Z    Compiling headers-core v0.3.0
+2025-05-23T14:47:16.5681653Z    Compiling rayon-core v1.12.1
+2025-05-23T14:47:16.8980702Z    Compiling ambient-authority v0.0.2
+2025-05-23T14:47:16.9831063Z    Compiling humantime v2.2.0
+2025-05-23T14:47:17.0629027Z    Compiling vsimd v0.8.0
+2025-05-23T14:47:17.2476722Z    Compiling outref v0.5.2
+2025-05-23T14:47:17.3633207Z    Compiling object v0.36.7
+2025-05-23T14:47:17.3797441Z    Compiling slice-group-by v0.3.1
+2025-05-23T14:47:17.5314758Z    Compiling cap-primitives v3.4.2
+2025-05-23T14:47:17.6930392Z    Compiling rustc-hash v2.1.1
+2025-05-23T14:47:17.8525031Z    Compiling opentelemetry-http v0.27.0
+2025-05-23T14:47:17.9755228Z    Compiling regalloc2 v0.10.2
+2025-05-23T14:47:18.1808038Z    Compiling logos-derive v0.14.4
+2025-05-23T14:47:18.3967416Z    Compiling base64-simd v0.8.0
+2025-05-23T14:47:18.4577090Z    Compiling headers v0.4.0
+2025-05-23T14:47:18.5113918Z    Compiling crossbeam-deque v0.8.6
+2025-05-23T14:47:18.5484390Z    Compiling opentelemetry-prometheus v0.17.0
+2025-05-23T14:47:19.5854819Z    Compiling tokio-tungstenite v0.25.0
+2025-05-23T14:47:20.2552970Z    Compiling sse-codec v0.3.2
+2025-05-23T14:47:20.2673625Z    Compiling fs-set-times v0.20.3
+2025-05-23T14:47:20.4279390Z    Compiling cranelift-bforest v0.114.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:47:20.6019681Z    Compiling rfc7239 v0.1.3
+2025-05-23T14:47:20.6822157Z    Compiling cranelift-control v0.114.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:47:20.7123840Z    Compiling poem-derive v3.1.4
+2025-05-23T14:47:20.8355484Z    Compiling wit-parser v0.227.1
+2025-05-23T14:47:20.9750713Z    Compiling tower v0.5.2
+2025-05-23T14:47:20.9927212Z    Compiling auditable-serde v0.8.0
+2025-05-23T14:47:21.0144318Z    Compiling bincode v2.0.0-rc.3
+2025-05-23T14:47:21.8272244Z    Compiling quick-xml v0.36.2
+2025-05-23T14:47:22.0282187Z    Compiling bit-vec v0.6.3
+2025-05-23T14:47:22.5614762Z    Compiling serde_spanned v0.6.8
+2025-05-23T14:47:22.6314522Z    Compiling derive_more-impl v1.0.0
+2025-05-23T14:47:22.7474855Z    Compiling opentelemetry-semantic-conventions v0.27.0
+2025-05-23T14:47:22.7875029Z    Compiling cpp_demangle v0.4.4
+2025-05-23T14:47:22.8147908Z    Compiling wildmatch v2.4.0
+2025-05-23T14:47:22.9137035Z    Compiling cobs v0.2.3
+2025-05-23T14:47:22.9461541Z    Compiling maybe-owned v0.3.4
+2025-05-23T14:47:23.0706826Z    Compiling zstd-safe v7.2.3
+2025-05-23T14:47:23.1382178Z    Compiling postcard v1.1.1
+2025-05-23T14:47:23.5113973Z    Compiling wasm-metadata v0.227.1
+2025-05-23T14:47:24.0385544Z    Compiling logos v0.14.4
+2025-05-23T14:47:24.3942328Z    Compiling aws-smithy-types v1.3.0
+2025-05-23T14:47:25.5642025Z    Compiling poem v3.1.6
+2025-05-23T14:47:27.7659549Z    Compiling derive_more v1.0.0
+2025-05-23T14:47:28.0866849Z    Compiling poem-openapi-derive v5.1.4
+2025-05-23T14:47:28.2875510Z    Compiling golem-wasm-ast v0.0.0 (/home/runner/work/golem/golem/wasm-ast)
+2025-05-23T14:47:28.8490186Z    Compiling ittapi-sys v0.4.0
+2025-05-23T14:47:29.5223294Z    Compiling num-bigint v0.4.6
+2025-05-23T14:47:32.7957227Z    Compiling dirs-sys v0.3.7
+2025-05-23T14:47:33.5479986Z    Compiling bigdecimal v0.4.7
+2025-05-23T14:47:33.8649698Z    Compiling rustversion v1.0.20
+2025-05-23T14:47:33.9751310Z    Compiling wasmtime-component-util v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:47:34.1134481Z    Compiling home v0.5.11
+2025-05-23T14:47:34.1475608Z    Compiling unicode-width v0.2.0
+2025-05-23T14:47:34.3810351Z    Compiling cap-std v3.4.2
+2025-05-23T14:47:34.7399427Z    Compiling rustls-pki-types v1.11.0
+2025-05-23T14:47:34.7801284Z    Compiling camino v1.1.9
+2025-05-23T14:47:35.5313528Z    Compiling dirs v4.0.0
+2025-05-23T14:47:35.7246107Z    Compiling toml v0.8.20
+2025-05-23T14:47:35.8009505Z    Compiling wasm-wave v0.227.1
+2025-05-23T14:47:35.9228350Z    Compiling wit-component v0.227.1
+2025-05-23T14:47:37.6705238Z    Compiling rayon v1.10.0
+2025-05-23T14:47:40.2880717Z    Compiling wit-parser v0.219.2
+2025-05-23T14:47:40.6944953Z    Compiling hyper-timeout v0.5.2
+2025-05-23T14:47:41.1817661Z    Compiling wasmtime-fiber v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:47:41.3017157Z    Compiling serde_path_to_error v0.1.17
+2025-05-23T14:47:41.6227849Z    Compiling async-stream-impl v0.3.6
+2025-05-23T14:47:42.3009304Z    Compiling wast v35.0.2
+2025-05-23T14:47:42.9768489Z    Compiling wasm-encoder v0.219.2
+2025-05-23T14:47:43.6986179Z    Compiling concurrent-queue v2.5.0
+2025-05-23T14:47:43.9813667Z    Compiling dirs-sys-next v0.1.2
+2025-05-23T14:47:44.0334543Z    Compiling poem-openapi v5.1.5
+2025-05-23T14:47:44.0600359Z    Compiling indexmap v1.9.3
+2025-05-23T14:47:44.5915585Z    Compiling wasmtime-component-macro v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:47:44.6777798Z    Compiling rustc-demangle v0.1.24
+2025-05-23T14:47:44.7597924Z    Compiling paste v1.0.15
+2025-05-23T14:47:44.9257134Z    Compiling tinyvec_macros v0.1.1
+2025-05-23T14:47:45.0389133Z    Compiling wasmtime-cache v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:47:45.2419287Z    Compiling mappable-rc v0.1.1
+2025-05-23T14:47:45.5689680Z    Compiling wasmtime-environ v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:47:45.8086508Z    Compiling tinyvec v1.9.0
+2025-05-23T14:47:45.8936734Z    Compiling directories-next v2.0.0
+2025-05-23T14:47:46.1162889Z    Compiling event-listener v5.4.0
+2025-05-23T14:47:46.1987805Z    Compiling witx v0.9.1
+2025-05-23T14:47:46.8439921Z    Compiling async-stream v0.3.6
+2025-05-23T14:47:47.0771393Z    Compiling wasmtime-wit-bindgen v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:47:47.1948833Z    Compiling shellexpand v2.1.2
+2025-05-23T14:47:49.4149218Z    Compiling zstd v0.13.3
+2025-05-23T14:47:50.1559839Z    Compiling wast v227.0.1
+2025-05-23T14:47:50.5580331Z    Compiling wasmtime v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:47:50.6764876Z    Compiling debugid v0.8.0
+2025-05-23T14:47:50.7390759Z    Compiling cargo-platform v0.1.9
+2025-05-23T14:47:51.1853475Z    Compiling fxhash v0.2.1
+2025-05-23T14:47:51.2988721Z    Compiling wasmtime-asm-macros v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:47:51.3367339Z    Compiling hashbrown v0.12.3
+2025-05-23T14:47:51.3455828Z    Compiling wiggle-macro v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:47:51.3461100Z    Compiling fxprof-processed-profile v0.6.0
+2025-05-23T14:47:51.8524892Z    Compiling cargo_metadata v0.19.2
+2025-05-23T14:47:52.0489684Z    Compiling axum-core v0.4.5
+2025-05-23T14:47:53.7266910Z    Compiling wiggle-generate v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:47:55.2258958Z    Compiling unicode-normalization v0.1.24
+2025-05-23T14:47:56.3970595Z    Compiling ittapi v0.4.0
+2025-05-23T14:47:56.8303637Z    Compiling wasmtime-jit-debug v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:47:57.4525606Z    Compiling addr2line v0.24.2
+2025-05-23T14:47:57.7300844Z    Compiling memfd v0.6.4
+2025-05-23T14:47:57.9251828Z    Compiling wasmtime-jit-icache-coherence v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:47:58.0577869Z    Compiling wasmtime-slab v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:47:58.1528069Z    Compiling unicode-properties v0.1.3
+2025-05-23T14:47:58.2976699Z    Compiling system-interface v0.27.3
+2025-05-23T14:47:58.3118547Z    Compiling cap-fs-ext v3.4.2
+2025-05-23T14:47:58.4033089Z    Compiling sptr v0.3.2
+2025-05-23T14:47:58.5214054Z    Compiling yansi v1.0.1
+2025-05-23T14:47:58.6217858Z    Compiling unicode-bidi v0.3.18
+2025-05-23T14:47:58.9698769Z    Compiling crc-catalog v2.4.0
+2025-05-23T14:47:59.0753926Z    Compiling matchit v0.7.3
+2025-05-23T14:47:59.1527099Z    Compiling crc v3.2.1
+2025-05-23T14:47:59.8369745Z    Compiling axum v0.7.9
+2025-05-23T14:47:59.9051834Z    Compiling stringprep v0.1.5
+2025-05-23T14:48:00.1255023Z    Compiling tower v0.4.13
+2025-05-23T14:48:00.2689979Z    Compiling aws-smithy-async v1.2.5
+2025-05-23T14:48:00.8832101Z    Compiling ipnetwork v0.20.0
+2025-05-23T14:48:01.3764688Z    Compiling num-bigint-dig v0.8.4
+2025-05-23T14:48:01.4703525Z    Compiling rustls v0.21.12
+2025-05-23T14:48:01.7123129Z    Compiling aws-smithy-runtime-api v1.7.4
+2025-05-23T14:48:02.2516112Z    Compiling cap-net-ext v3.4.2
+2025-05-23T14:48:02.7069931Z    Compiling cap-time-ext v3.4.2
+2025-05-23T14:48:02.9539504Z    Compiling cap-rand v3.4.2
+2025-05-23T14:48:03.1511351Z    Compiling sct v0.7.1
+2025-05-23T14:48:03.2604062Z    Compiling rustls-webpki v0.101.7
+2025-05-23T14:48:03.5394629Z    Compiling wit-bindgen-rt v0.40.0
+2025-05-23T14:48:03.9531983Z    Compiling utf8parse v0.2.2
+2025-05-23T14:48:04.1314243Z    Compiling golem-wasm-rpc v0.0.0 (/home/runner/work/golem/golem/wasm-rpc)
+2025-05-23T14:48:04.4907052Z    Compiling wat v1.227.1
+2025-05-23T14:48:05.9289348Z    Compiling h2 v0.3.26
+2025-05-23T14:48:07.5851091Z    Compiling git-version-macro v0.3.9
+2025-05-23T14:48:08.4789184Z    Compiling rustls-pemfile v1.0.4
+2025-05-23T14:48:08.9340978Z    Compiling md-5 v0.10.6
+2025-05-23T14:48:09.0648035Z    Compiling signature v2.2.0
+2025-05-23T14:48:09.0790555Z    Compiling crypto-bigint v0.5.5
+2025-05-23T14:48:09.2123896Z    Compiling der v0.6.1
+2025-05-23T14:48:09.9827983Z    Compiling git-version v0.3.9
+2025-05-23T14:48:10.1047041Z    Compiling rustls-native-certs v0.6.3
+2025-05-23T14:48:12.3427103Z    Compiling tonic v0.12.3
+2025-05-23T14:48:12.3789035Z    Compiling spki v0.6.0
+2025-05-23T14:48:12.5730982Z    Compiling tokio-rustls v0.24.1
+2025-05-23T14:48:13.0821154Z    Compiling pkcs1 v0.7.5
+2025-05-23T14:48:13.3854829Z    Compiling tonic-build v0.12.3
+2025-05-23T14:48:13.7972839Z    Compiling async-recursion v1.1.1
+2025-05-23T14:48:14.2012463Z    Compiling anstyle v1.0.10
+2025-05-23T14:48:15.4667975Z    Compiling pkcs8 v0.9.0
+2025-05-23T14:48:15.8607336Z    Compiling hyper v0.14.32
+2025-05-23T14:48:15.9013786Z    Compiling mac_address v1.1.8
+2025-05-23T14:48:16.0163565Z    Compiling golem-api-grpc v0.0.0 (/home/runner/work/golem/golem/golem-api-grpc)
+2025-05-23T14:48:16.0640566Z    Compiling anstyle-parse v0.2.6
+2025-05-23T14:48:16.4301292Z    Compiling crossbeam-queue v0.3.12
+2025-05-23T14:48:17.6614274Z    Compiling futures-intrusive v0.5.0
+2025-05-23T14:48:18.0430983Z    Compiling libsqlite3-sys v0.30.1
+2025-05-23T14:48:18.7453847Z    Compiling crypto-bigint v0.4.9
+2025-05-23T14:48:19.0487201Z    Compiling hashlink v0.10.0
+2025-05-23T14:48:19.0593647Z    Compiling ff v0.12.1
+2025-05-23T14:48:19.7517908Z    Compiling base16ct v0.1.1
+2025-05-23T14:48:19.7756174Z    Compiling dotenvy v0.15.7
+2025-05-23T14:48:19.8113321Z    Compiling is_terminal_polyfill v1.70.1
+2025-05-23T14:48:19.9177737Z    Compiling anstyle-query v1.1.1
+2025-05-23T14:48:19.9872853Z    Compiling colorchoice v1.0.3
+2025-05-23T14:48:20.0842533Z    Compiling sec1 v0.3.0
+2025-05-23T14:48:20.0919907Z    Compiling group v0.12.1
+2025-05-23T14:48:20.1836155Z    Compiling anstream v0.6.15
+2025-05-23T14:48:20.2334385Z    Compiling sqlx-core v0.8.3
+2025-05-23T14:48:20.7867122Z    Compiling num-iter v0.1.45
+2025-05-23T14:48:20.9795097Z    Compiling atoi v2.0.0
+2025-05-23T14:48:21.1344624Z    Compiling rand_core v0.9.3
+2025-05-23T14:48:21.1661428Z    Compiling clap_lex v0.7.4
+2025-05-23T14:48:21.4755226Z    Compiling cranelift-native v0.114.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:48:21.6387426Z    Compiling cranelift-frontend v0.114.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:48:21.6561295Z    Compiling rand_chacha v0.9.0
+2025-05-23T14:48:21.7633165Z    Compiling clap_builder v4.5.32
+2025-05-23T14:48:22.8955006Z    Compiling wasmtime-cranelift v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:48:24.5798784Z    Compiling elliptic-curve v0.12.3
+2025-05-23T14:48:24.5997055Z    Compiling rfc6979 v0.3.1
+2025-05-23T14:48:25.2748806Z    Compiling rustls-pemfile v2.2.0
+2025-05-23T14:48:25.3232552Z    Compiling aws-smithy-eventstream v0.60.8
+2025-05-23T14:48:25.6648803Z    Compiling combine v4.6.7
+2025-05-23T14:48:26.5202329Z    Compiling hyper-rustls v0.24.2
+2025-05-23T14:48:27.0569882Z    Compiling clap_derive v4.5.32
+2025-05-23T14:48:28.0556825Z    Compiling signature v1.6.4
+2025-05-23T14:48:28.2535600Z    Compiling proc-macro2-diagnostics v0.10.1
+2025-05-23T14:48:29.6945927Z    Compiling minimal-lexical v0.2.1
+2025-05-23T14:48:30.2479324Z    Compiling whoami v1.5.2
+2025-05-23T14:48:30.6045297Z    Compiling regex-syntax v0.6.29
+2025-05-23T14:48:30.8117364Z    Compiling nom v7.1.3
+2025-05-23T14:48:31.3723789Z    Compiling ecdsa v0.14.8
+2025-05-23T14:48:33.5684260Z    Compiling clap v4.5.32
+2025-05-23T14:48:33.8504384Z    Compiling rsa v0.9.8
+2025-05-23T14:48:35.1122389Z    Compiling regex-automata v0.1.10
+2025-05-23T14:48:36.0176925Z    Compiling rand v0.9.0
+2025-05-23T14:48:36.0560535Z    Compiling aws-credential-types v1.2.2
+2025-05-23T14:48:36.7987429Z    Compiling aws-smithy-http v0.62.0
+2025-05-23T14:48:37.8879056Z    Compiling aws-types v1.3.6
+2025-05-23T14:48:37.9162082Z    Compiling flume v0.11.1
+2025-05-23T14:48:38.0866533Z    Compiling cmake v0.1.54
+2025-05-23T14:48:38.3724867Z    Compiling crc16 v0.4.0
+2025-05-23T14:48:38.4758575Z    Compiling dunce v1.0.5
+2025-05-23T14:48:38.5287875Z    Compiling overload v0.1.1
+2025-05-23T14:48:38.6227579Z    Compiling fs_extra v1.3.0
+2025-05-23T14:48:38.6626706Z    Compiling urlencoding v2.1.3
+2025-05-23T14:48:38.9784541Z    Compiling nu-ansi-term v0.46.0
+2025-05-23T14:48:39.0186723Z    Compiling sqlx-mysql v0.8.3
+2025-05-23T14:48:39.0301865Z    Compiling matchers v0.1.0
+2025-05-23T14:48:39.3044270Z    Compiling p256 v0.11.1
+2025-05-23T14:48:39.3337634Z    Compiling aws-lc-sys v0.27.0
+2025-05-23T14:48:40.4081136Z    Compiling sqlx-postgres v0.8.3
+2025-05-23T14:48:40.6903003Z    Compiling aws-smithy-http-client v1.0.0
+2025-05-23T14:48:41.1165096Z    Compiling event-listener-strategy v0.5.3
+2025-05-23T14:48:41.2652746Z    Compiling tracing-serde v0.2.0
+2025-05-23T14:48:41.3186401Z    Compiling sharded-slab v0.1.7
+2025-05-23T14:48:41.5324237Z    Compiling tracing-log v0.2.0
+2025-05-23T14:48:41.5773494Z    Compiling thread_local v1.1.8
+2025-05-23T14:48:42.0807380Z    Compiling pear_codegen v0.2.9
+2025-05-23T14:48:42.2534014Z    Compiling sqlx-sqlite v0.8.3
+2025-05-23T14:48:43.1583125Z    Compiling tracing-subscriber v0.3.19
+2025-05-23T14:48:43.1811246Z    Compiling aws-smithy-runtime v1.8.0
+2025-05-23T14:48:45.0085312Z    Compiling aws-sigv4 v1.3.0
+2025-05-23T14:48:48.6561306Z    Compiling cookie-factory v0.3.3
+2025-05-23T14:48:49.4106949Z    Compiling figment v0.10.19
+2025-05-23T14:48:49.4818424Z    Compiling unicase v2.8.1
+2025-05-23T14:48:49.5456848Z    Compiling inlinable_string v0.1.15
+2025-05-23T14:48:49.8375347Z    Compiling sqlx-macros-core v0.8.3
+2025-05-23T14:48:49.9010140Z    Compiling range-set-blaze v0.1.16
+2025-05-23T14:48:49.9187271Z    Compiling arc-swap v1.7.1
+2025-05-23T14:48:50.5360193Z    Compiling mime_guess v2.0.5
+2025-05-23T14:48:50.5899437Z    Compiling pear v0.2.9
+2025-05-23T14:48:50.7281998Z    Compiling aws-runtime v1.5.6
+2025-05-23T14:48:51.9766080Z    Compiling redis-protocol v5.0.1 (https://github.com/golemcloud/redis-protocol.rs.git?branch=unpin-cookie-factory#8cdd8263)
+2025-05-23T14:48:54.0649918Z    Compiling hdrhistogram v7.5.4
+2025-05-23T14:48:55.5561945Z    Compiling wiggle v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:48:56.0384225Z    Compiling console-api v0.8.1
+2025-05-23T14:48:56.3857677Z    Compiling wasmtime-wasi v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:48:56.5333668Z    Compiling aws-smithy-json v0.61.3
+2025-05-23T14:48:56.8005321Z    Compiling tracing-futures v0.2.5
+2025-05-23T14:48:56.9408408Z    Compiling derive_more-impl v2.0.1
+2025-05-23T14:48:57.5570502Z    Compiling sqlx-macros v0.8.3
+2025-05-23T14:48:57.7848839Z    Compiling fred-macros v0.1.0
+2025-05-23T14:48:58.3537939Z    Compiling crossbeam-channel v0.5.14
+2025-05-23T14:48:58.9353080Z    Compiling float-cmp v0.9.0
+2025-05-23T14:48:59.1155251Z    Compiling generic-array v1.2.0
+2025-05-23T14:48:59.6395231Z    Compiling regex-lite v0.1.6
+2025-05-23T14:48:59.7326268Z    Compiling aws-lc-rs v1.12.6
+2025-05-23T14:49:00.3124583Z    Compiling gen_ops v0.4.0
+2025-05-23T14:49:01.1382953Z    Compiling iso8601-timestamp v0.3.3
+2025-05-23T14:49:01.7260439Z    Compiling console-subscriber v0.4.1
+2025-05-23T14:49:02.4377005Z    Compiling fred v9.4.0
+2025-05-23T14:49:03.8944164Z    Compiling derive_more v2.0.1
+2025-05-23T14:49:04.7244560Z    Compiling humantime-serde v1.1.1
+2025-05-23T14:49:04.9463687Z    Compiling async-compression v0.4.20
+2025-05-23T14:49:05.4667094Z    Compiling crc32c v0.6.8
+2025-05-23T14:49:06.2250036Z    Compiling dashmap v6.1.0
+2025-05-23T14:49:06.5530437Z    Compiling golem-wasm-rpc-derive v0.0.0 (/home/runner/work/golem/golem/wasm-rpc-derive)
+2025-05-23T14:49:07.0196413Z    Compiling sqlx v0.8.3
+2025-05-23T14:49:07.1042390Z    Compiling proc-macro-error-attr v1.0.4
+2025-05-23T14:49:07.3174933Z    Compiling xmlparser v0.13.6
+2025-05-23T14:49:07.7080789Z    Compiling nonempty-collections v0.3.0
+2025-05-23T14:49:08.2010045Z    Compiling typed-path v0.10.0
+2025-05-23T14:49:08.6463084Z    Compiling aws-smithy-xml v0.60.9
+2025-05-23T14:49:09.3404691Z    Compiling aws-smithy-http v0.60.12
+2025-05-23T14:49:09.9511056Z    Compiling hyper-tls v0.6.0
+2025-05-23T14:49:10.4175604Z    Compiling futures-lite v2.6.0
+2025-05-23T14:49:10.4609483Z    Compiling proc-macro-error v1.0.4
+2025-05-23T14:49:10.7600463Z    Compiling reqwest v0.12.14
+2025-05-23T14:49:12.4301523Z    Compiling async-channel v2.3.1
+2025-05-23T14:49:12.5127147Z    Compiling aws-smithy-query v0.60.7
+2025-05-23T14:49:12.7411906Z    Compiling piper v0.2.4
+2025-05-23T14:49:12.8657736Z    Compiling async-task v4.7.1
+2025-05-23T14:49:12.8945428Z    Compiling aws-sdk-sts v1.63.0
+2025-05-23T14:49:13.3603869Z    Compiling blocking v1.6.1
+2025-05-23T14:49:13.8478807Z    Compiling aws-smithy-checksums v0.60.13
+2025-05-23T14:49:14.0159204Z    Compiling aws-sdk-ssooidc v1.63.0
+2025-05-23T14:49:14.8646597Z    Compiling aws-sdk-sso v1.62.0
+2025-05-23T14:49:17.7179627Z    Compiling async-lock v3.4.0
+2025-05-23T14:49:19.3378411Z    Compiling aws-smithy-json v0.60.7
+2025-05-23T14:49:19.5202216Z    Compiling lru v0.12.5
+2025-05-23T14:49:19.9236899Z    Compiling num_cpus v1.16.0
+2025-05-23T14:49:20.4322648Z    Compiling async-hash v0.5.4
+2025-05-23T14:49:20.7186966Z    Compiling aws-config v1.5.10
+2025-05-23T14:49:20.9868603Z    Compiling aws-sdk-s3 v1.65.0
+2025-05-23T14:49:22.7605267Z    Compiling async-fs v2.1.2
+2025-05-23T14:49:24.1132860Z    Compiling conditional-trait-gen v0.4.1
+2025-05-23T14:49:24.2461837Z    Compiling rustls v0.23.23
+2025-05-23T14:49:24.7956901Z    Compiling ordered-float v2.10.1
+2025-05-23T14:49:25.4546426Z    Compiling serde-value v0.7.0
+2025-05-23T14:49:26.4118716Z    Compiling rustls-native-certs v0.8.1
+2025-05-23T14:49:26.4283697Z    Compiling serde_with_macros v3.12.0
+2025-05-23T14:49:26.4952374Z    Compiling dyn-clone v1.0.19
+2025-05-23T14:49:26.8028016Z    Compiling doctest-file v1.0.0
+2025-05-23T14:49:27.1474538Z    Compiling anstyle-wincon v3.0.4
+2025-05-23T14:49:27.1484128Z    Compiling quick-xml v0.37.2
+2025-05-23T14:49:27.2436652Z    Compiling escape8259 v0.5.3
+2025-05-23T14:49:27.6103594Z    Compiling structmeta-derive v0.3.0
+2025-05-23T14:49:27.9990412Z    Compiling interprocess v2.2.3
+2025-05-23T14:49:29.8651900Z    Compiling test-r-core v2.1.0
+2025-05-23T14:49:29.8920391Z    Compiling async-dropper-simple v0.2.6
+2025-05-23T14:49:29.9833577Z    Compiling serde_repr v0.1.20
+2025-05-23T14:49:30.3282691Z    Compiling serde_with v3.12.0
+2025-05-23T14:49:30.3985055Z    Compiling unicode-segmentation v1.12.0
+2025-05-23T14:49:31.0836832Z    Compiling structmeta v0.3.0
+2025-05-23T14:49:31.2776875Z    Compiling ucd-trie v0.1.7
+2025-05-23T14:49:31.5102545Z    Compiling parse-display-derive v0.9.1
+2025-05-23T14:49:31.9014127Z    Compiling pest v2.7.15
+2025-05-23T14:49:32.0307614Z    Compiling hyperlocal v0.9.1
+2025-05-23T14:49:32.5533982Z    Compiling async-scoped v0.9.0
+2025-05-23T14:49:32.8827002Z    Compiling xattr v1.5.0
+2025-05-23T14:49:33.4967290Z    Compiling ctor v0.2.9
+2025-05-23T14:49:35.2024889Z    Compiling filetime v0.2.25
+2025-05-23T14:49:35.3845330Z    Compiling bollard-stubs v1.47.1-rc.27.3.1
+2025-05-23T14:49:35.4407285Z    Compiling diff v0.1.13
+2025-05-23T14:49:35.5051272Z    Compiling tokio-tar v0.3.1
+2025-05-23T14:49:35.6031459Z    Compiling pest_meta v2.7.15
+2025-05-23T14:49:36.5373335Z    Compiling test-r-macro v1.2.2
+2025-05-23T14:49:37.7691889Z    Compiling etcetera v0.8.0
+2025-05-23T14:49:38.1167478Z    Compiling parse-display v0.9.1
+2025-05-23T14:49:38.2126831Z    Compiling docker_credential v1.3.1
+2025-05-23T14:49:38.2339294Z    Compiling serde_derive_internals v0.29.1
+2025-05-23T14:49:38.9097403Z    Compiling schemars v0.8.22
+2025-05-23T14:49:39.3996123Z    Compiling k8s-openapi v0.24.0
+2025-05-23T14:49:39.7391920Z    Compiling pest_generator v2.7.15
+2025-05-23T14:49:40.3606256Z    Compiling jsonptr v0.6.3
+2025-05-23T14:49:40.7689158Z    Compiling schemars_derive v0.8.22
+2025-05-23T14:49:41.6988256Z    Compiling pest_derive v2.7.15
+2025-05-23T14:49:41.8736677Z    Compiling json-patch v3.0.1
+2025-05-23T14:49:42.7486539Z    Compiling test-r v2.1.0
+2025-05-23T14:49:43.0265527Z    Compiling enum-ordinalize-derive v4.3.1
+2025-05-23T14:49:43.1648340Z    Compiling async_zip v0.0.17
+2025-05-23T14:49:43.4217706Z    Compiling jsonpath-rust v0.7.5
+2025-05-23T14:49:45.1950297Z    Compiling enum-ordinalize v4.3.0
+2025-05-23T14:49:45.2947571Z    Compiling tower-http v0.6.2
+2025-05-23T14:49:45.6801029Z    Compiling assert2-macros v0.3.15
+2025-05-23T14:49:46.0712189Z    Compiling pem v3.0.5
+2025-05-23T14:49:47.1091869Z    Compiling secrecy v0.10.3
+2025-05-23T14:49:47.3443298Z    Compiling instant v0.1.13
+2025-05-23T14:49:47.4536449Z    Compiling backoff v0.4.0
+2025-05-23T14:49:47.4780976Z    Compiling educe v0.6.0
+2025-05-23T14:49:47.7367901Z    Compiling async-broadcast v0.7.2
+2025-05-23T14:49:48.1666924Z    Compiling hostname v0.4.0
+2025-05-23T14:49:48.3574236Z    Compiling is-terminal v0.4.16
+2025-05-23T14:49:48.9376521Z    Compiling convert_case v0.6.0
+2025-05-23T14:49:49.4154951Z    Compiling kube-derive v0.98.0
+2025-05-23T14:49:49.7300034Z    Compiling openapiv3 v2.0.0
+2025-05-23T14:49:50.1490260Z    Compiling indoc v2.0.6
+2025-05-23T14:49:50.9710456Z    Compiling fmt v0.1.0
+2025-05-23T14:49:51.1320162Z    Compiling assert2 v0.3.15
+2025-05-23T14:49:51.7267251Z    Compiling siphasher v1.0.1
+2025-05-23T14:49:52.1326061Z    Compiling fallible-iterator v0.2.0
+2025-05-23T14:49:52.2522776Z    Compiling phf_shared v0.11.3
+2025-05-23T14:49:52.6250633Z    Compiling phf v0.11.3
+2025-05-23T14:49:52.7426302Z    Compiling postgres-protocol v0.6.8
+2025-05-23T14:49:52.9226760Z    Compiling csv-core v0.1.12
+2025-05-23T14:49:53.3586703Z    Compiling kill_tree v0.2.4
+2025-05-23T14:49:53.4803994Z    Compiling colored v3.0.0
+2025-05-23T14:49:53.9551110Z    Compiling postgres-types v0.2.9
+2025-05-23T14:49:54.2365048Z    Compiling csv v1.3.1
+2025-05-23T14:49:54.4826295Z    Compiling async-dropper-derive v0.3.1
+2025-05-23T14:49:54.9260626Z    Compiling tokio-postgres v0.7.13
+2025-05-23T14:49:55.3974842Z    Compiling cli-table-derive v0.4.6
+2025-05-23T14:49:56.0221113Z    Compiling golem-openapi-client-generator v0.0.15
+2025-05-23T14:49:56.1898956Z    Compiling nix v0.27.1
+2025-05-23T14:49:56.2777105Z    Compiling unicode-width v0.1.14
+2025-05-23T14:49:56.8628910Z    Compiling async-dropper v0.3.1
+2025-05-23T14:49:57.0288873Z    Compiling redis v0.29.1
+2025-05-23T14:49:57.5174499Z    Compiling cli-table v0.4.9
+2025-05-23T14:49:59.0272598Z    Compiling nibble_vec v0.1.0
+2025-05-23T14:49:59.2354371Z    Compiling endian-type v0.1.2
+2025-05-23T14:49:59.4237226Z    Compiling radix_trie v0.2.1
+2025-05-23T14:50:00.1397829Z    Compiling postgres v0.19.10
+2025-05-23T14:50:00.3738032Z    Compiling fd-lock v4.0.4
+2025-05-23T14:50:00.5864294Z    Compiling rustyline v15.0.0
+2025-05-23T14:50:00.6103491Z    Compiling wasmparser v0.202.0
+2025-05-23T14:50:02.9749260Z    Compiling wasm-encoder v0.202.0
+2025-05-23T14:50:05.7279857Z    Compiling kube-core v0.98.0
+2025-05-23T14:50:06.3075601Z    Compiling fixedbitset v0.4.2
+2025-05-23T14:50:06.4233347Z    Compiling golem-client v0.0.0 (/home/runner/work/golem/golem/golem-client)
+2025-05-23T14:50:06.8406209Z    Compiling petgraph v0.6.5
+2025-05-23T14:50:09.2784259Z    Compiling tonic-health v0.12.3
+2025-05-23T14:50:09.4882882Z    Compiling tonic-reflection v0.12.3
+2025-05-23T14:50:10.3340277Z    Compiling itertools v0.10.5
+2025-05-23T14:50:10.7769878Z    Compiling event-listener v2.5.3
+2025-05-23T14:50:11.1083654Z    Compiling async-mutex v1.4.0
+2025-05-23T14:50:11.2385164Z    Compiling ff v0.13.1
+2025-05-23T14:50:11.2967562Z    Compiling base16ct v0.2.0
+2025-05-23T14:50:11.4573592Z    Compiling group v0.13.0
+2025-05-23T14:50:11.6358608Z    Compiling wasm-metadata v0.202.0
+2025-05-23T14:50:11.8205117Z    Compiling wac-types v0.6.1
+2025-05-23T14:50:13.0633121Z    Compiling sec1 v0.7.3
+2025-05-23T14:50:13.2234952Z    Compiling rustls v0.22.4
+2025-05-23T14:50:13.6617165Z    Compiling wac-graph v0.6.1
+2025-05-23T14:50:13.7588365Z    Compiling elliptic-curve v0.13.8
+2025-05-23T14:50:14.1683329Z    Compiling curve25519-dalek v4.1.3
+2025-05-23T14:50:14.4037935Z    Compiling hashbrown v0.13.2
+2025-05-23T14:50:14.4603095Z    Compiling rfc6979 v0.4.0
+2025-05-23T14:50:14.6123530Z    Compiling ecdsa v0.16.9
+2025-05-23T14:50:15.0235915Z    Compiling primeorder v0.13.6
+2025-05-23T14:50:15.4278923Z    Compiling ordered_hash_map v0.4.0
+2025-05-23T14:50:15.4511689Z    Compiling webpki-roots v0.26.8
+2025-05-23T14:50:15.5336513Z    Compiling curve25519-dalek-derive v0.1.1
+2025-05-23T14:50:15.7241153Z    Compiling try_match_inner v0.5.2
+2025-05-23T14:50:15.8806566Z    Compiling sync_wrapper v0.1.2
+2025-05-23T14:50:16.0300331Z    Compiling webpki-roots v0.25.4
+2025-05-23T14:50:16.1851890Z    Compiling reqwest v0.11.27
+2025-05-23T14:50:16.2614068Z    Compiling evicting_cache_map v0.4.0
+2025-05-23T14:50:16.4644928Z    Compiling ed25519 v2.2.3
+2025-05-23T14:50:16.9478317Z    Compiling sysinfo v0.33.1
+2025-05-23T14:50:17.1068963Z    Compiling gethostname v1.0.0
+2025-05-23T14:50:17.3266491Z    Compiling drop-stream v0.3.2
+2025-05-23T14:50:17.4943147Z    Compiling ringbuf v0.4.7
+2025-05-23T14:50:18.0213949Z    Compiling try_match v0.4.2
+2025-05-23T14:50:18.0622026Z    Compiling humansize v2.1.3
+2025-05-23T14:50:18.1597637Z    Compiling tap v1.0.1
+2025-05-23T14:50:18.3004538Z    Compiling base64 v0.13.1
+2025-05-23T14:50:18.3443390Z    Compiling metrohash v1.0.7
+2025-05-23T14:50:18.5508718Z    Compiling md5 v0.7.0
+2025-05-23T14:50:18.9066682Z    Compiling p256 v0.13.2
+2025-05-23T14:50:18.9304537Z    Compiling p384 v0.13.1
+2025-05-23T14:50:19.6450098Z    Compiling serde_plain v1.0.2
+2025-05-23T14:50:20.0127294Z    Compiling ed25519-dalek v2.1.1
+2025-05-23T14:50:20.6569739Z    Compiling oauth2 v4.4.2
+2025-05-23T14:50:20.6596438Z    Compiling opentelemetry v0.28.0
+2025-05-23T14:50:21.6006567Z    Compiling include_dir_macros v0.7.4
+2025-05-23T14:50:22.3720980Z    Compiling opentelemetry_sdk v0.28.0
+2025-05-23T14:50:22.6477304Z    Compiling include_dir v0.7.4
+2025-05-23T14:50:22.8957489Z    Compiling openidconnect v3.5.0
+2025-05-23T14:50:22.9646426Z    Compiling sanitize-filename v0.6.0
+2025-05-23T14:50:23.3247882Z    Compiling half v2.4.1
+2025-05-23T14:50:23.6331917Z    Compiling ciborium-io v0.2.2
+2025-05-23T14:50:23.7794125Z    Compiling plotters-backend v0.3.7
+2025-05-23T14:50:23.8698082Z    Compiling ciborium-ll v0.2.2
+2025-05-23T14:50:24.0791827Z    Compiling wait-timeout v0.2.1
+2025-05-23T14:50:24.2491124Z    Compiling plotters-svg v0.3.7
+2025-05-23T14:50:24.3093933Z    Compiling ansi_term v0.12.1
+2025-05-23T14:50:24.6167959Z    Compiling quick-error v1.2.3
+2025-05-23T14:50:24.7994930Z    Compiling cast v0.3.0
+2025-05-23T14:50:24.8564997Z    Compiling dissimilar v1.0.10
+2025-05-23T14:50:24.8646223Z    Compiling same-file v1.0.6
+2025-05-23T14:50:25.1937198Z    Compiling walkdir v2.5.0
+2025-05-23T14:50:25.3056617Z    Compiling criterion-plot v0.5.0
+2025-05-23T14:50:25.7888368Z    Compiling colored-diff v0.2.3
+2025-05-23T14:50:26.1145180Z    Compiling rusty-fork v0.3.0
+2025-05-23T14:50:26.2104082Z    Compiling plotters v0.3.7
+2025-05-23T14:50:26.3458613Z    Compiling ciborium v0.2.2
+2025-05-23T14:50:26.5188209Z    Compiling pretty_assertions v1.4.1
+2025-05-23T14:50:26.8621159Z    Compiling bit-set v0.5.3
+2025-05-23T14:50:27.0068819Z    Compiling tinytemplate v1.2.1
+2025-05-23T14:50:27.0380439Z    Compiling rand_xorshift v0.3.0
+2025-05-23T14:50:27.3471596Z    Compiling anes v0.1.6
+2025-05-23T14:50:27.3868821Z    Compiling oorandom v11.1.5
+2025-05-23T14:50:27.5025181Z    Compiling unarray v0.1.4
+2025-05-23T14:50:27.5875155Z    Compiling proptest v1.5.0
+2025-05-23T14:50:27.9991125Z    Compiling async-rwlock v1.3.0
+2025-05-23T14:50:28.0807499Z    Compiling similar v2.7.0
+2025-05-23T14:50:28.2045514Z    Compiling tracing-test-macro v0.2.5
+2025-05-23T14:50:29.5883229Z    Compiling criterion v0.5.1
+2025-05-23T14:50:30.0505885Z    Compiling console v0.15.11
+2025-05-23T14:50:31.2737322Z    Compiling opentelemetry-prometheus v0.28.0
+2025-05-23T14:50:31.7559097Z    Compiling similar-asserts v1.7.0
+2025-05-23T14:50:33.0906138Z    Compiling tracing-test v0.2.5
+2025-05-23T14:50:33.4316602Z    Compiling goldenfile v1.8.0
+2025-05-23T14:50:40.8793161Z    Compiling proptest-arbitrary-interop v0.1.0
+2025-05-23T14:50:46.3432379Z    Compiling golem-rib v0.0.0 (/home/runner/work/golem/golem/golem-rib)
+2025-05-23T14:50:54.9949639Z    Compiling rustls-webpki v0.102.8
+2025-05-23T14:51:04.1003099Z    Compiling tokio-rustls v0.25.0
+2025-05-23T14:51:04.6512292Z    Compiling wasmtime-wasi-http v27.0.0 (https://github.com/golemcloud/wasmtime.git?branch=golem-wasmtime-v27.0.0#c015cdb5)
+2025-05-23T14:51:05.9799243Z    Compiling tokio-rustls v0.26.2
+2025-05-23T14:51:06.7265219Z    Compiling hyper-rustls v0.27.5
+2025-05-23T14:51:07.5428978Z    Compiling bollard v0.18.1
+2025-05-23T14:51:08.1459135Z    Compiling kube-client v0.98.0
+2025-05-23T14:51:13.8690234Z    Compiling golem-common v0.0.0 (/home/runner/work/golem/golem/golem-common)
+2025-05-23T14:51:13.8694969Z    Compiling golem-rib-repl v0.0.0 (/home/runner/work/golem/golem/golem-rib-repl)
+2025-05-23T14:51:14.4077160Z    Compiling testcontainers v0.23.3
+2025-05-23T14:51:17.1208810Z    Compiling kube-runtime v0.98.0
+2025-05-23T14:51:20.6569486Z    Compiling testcontainers-modules v0.11.6
+2025-05-23T14:51:21.7573740Z    Compiling kube v0.98.0
+2025-05-23T14:51:39.2673182Z    Compiling golem-service-base v0.0.0 (/home/runner/work/golem/golem/golem-service-base)
+2025-05-23T14:51:51.8803883Z    Compiling golem-worker-executor-base v0.0.0 (/home/runner/work/golem/golem/golem-worker-executor-base)
+2025-05-23T14:51:51.8805880Z    Compiling golem-worker-service-base v0.0.0 (/home/runner/work/golem/golem/golem-worker-service-base)
+2025-05-23T14:51:51.8807450Z    Compiling golem-component-service-base v0.0.0 (/home/runner/work/golem/golem/golem-component-service-base)
+2025-05-23T14:51:51.8808783Z    Compiling golem-shard-manager v0.0.0 (/home/runner/work/golem/golem/golem-shard-manager)
+2025-05-23T14:52:08.1057339Z    Compiling golem-test-framework v0.0.0 (/home/runner/work/golem/golem/golem-test-framework)
+2025-05-23T14:52:18.3587583Z    Compiling golem-component-service v0.0.0 (/home/runner/work/golem/golem/golem-component-service)
+2025-05-23T14:52:44.1839981Z    Compiling golem-worker-service v0.0.0 (/home/runner/work/golem/golem/golem-worker-service)
+2025-05-23T14:53:15.1443365Z    Compiling integration-tests v0.0.0 (/home/runner/work/golem/golem/integration-tests)
+2025-05-23T14:54:42.5496304Z ##[error]The runner has received a shutdown signal. This can happen when the runner service is stopped, or a manually started runner is canceled.
+2025-05-23T14:54:42.6070562Z ##[error]Process completed with exit code 143.
+2025-05-23T14:54:42.7886285Z Cleaning up orphan processes
