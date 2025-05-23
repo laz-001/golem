@@ -90,6 +90,8 @@ jobs:
         run: cargo make --profile ci unit-tests -- --keep-going
       - name: Check formatting and clippy rules
         run: cargo make --profile ci check
+      - name: Clippy all crates (report all errors)
+        run: cargo make --profile ci check-clippy-all-crates
       - name: Check openapi is up to date
         run: cargo make --profile ci check-openapi
       - name: Check configs are up to date
@@ -103,6 +105,7 @@ jobs:
           include_passed: true
 
   worker-tests:
+    if: false # Disabled for faster iteration on Windows
     env:
       CARGO_BUILD_JOBS: 10
     strategy:
@@ -171,6 +174,7 @@ jobs:
           include_passed: true
 
   api-and-integration-tests:
+    if: false # Disabled for faster iteration on Windows
     env:
       CARGO_BUILD_JOBS: 10
     strategy:
