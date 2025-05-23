@@ -23,7 +23,7 @@ env:
 jobs:
   build:
     env:
-      CARGO_BUILD_JOBS: 10
+      CARGO_BUILD_JOBS: 4
     strategy:
       fail-fast: false
       matrix:
@@ -53,7 +53,7 @@ jobs:
       - name: Building all executables
         env:
           QUIET: true
-        run: cargo make --profile ci build -- --keep-going
+        run: cargo make --profile ci build -- --keep-going --jobs 1
         timeout-minutes: 30
 
   unit-tests-and-checks:
