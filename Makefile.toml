@@ -413,10 +413,10 @@ cargo test --package integration-tests --test api -- :tag: --nocapture --report-
 [tasks.check-openapi]
 description = "Generates openapi spec from the code and checks if it is the same as the ones in the openapi directory"
 dependencies = [
-    "build-worker-service",
-    "build-component-service",
     "generate-worker-service-openapi",
     "generate-component-service-openapi",
+    "build-worker-service",
+    "build-component-service",
     "merge-openapi",
     "diff-openapi",
 ]
@@ -449,13 +449,19 @@ description = "Generates openapi spec from the code and saves it to the openapi 
 
 [tasks.generate-worker-service-openapi]
 description = "Generates openapi spec for worker service"
-create_dir = ["target/data"]
-script = 'cargo run -p golem-worker-service -- --dump-openapi-yaml > target/golem-worker-service.yaml'
+cwd = "./target/debug"
+create_dir = ["../data"]
+script = '''
+cargo run -p golem-worker-service -- --dump-openapi-yaml > ../golem-worker-service.yaml
+'''
 
 [tasks.generate-component-service-openapi]
 description = "Generates openapi spec for component service"
-create_dir = ["target/data"]
-script = 'cargo run -p golem-component-service -- --dump-openapi-yaml > target/golem-component-service.yaml'
+cwd = "./target/debug"
+create_dir = ["../data"]
+script = '''
+cargo run -p golem-component-service -- --dump-openapi-yaml > ../golem-component-service.yaml
+'''
 
 [tasks.merge-openapi]
 install_crate = { crate_name = "golem-openapi-client-generator", version = "=0.0.15" }

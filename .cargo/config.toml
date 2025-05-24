@@ -1,0 +1,6 @@
+# Cargo configuration for Golem project
+[build]
+jobs = 2
+
+[env]
+RUST_TEST_THREADS = "2"
