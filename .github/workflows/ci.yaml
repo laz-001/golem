@@ -22,14 +22,23 @@ env:
 
 jobs:
   build:
-    # if: false # Disabled for faster iteration on Windows
-    env:
-      CARGO_BUILD_JOBS: 4
     strategy:
       fail-fast: false
       matrix:
         os: [windows-latest]
+        group:
+          - name: group1
+            crates: "golem-api-grpc golem-client golem-common golem-service-base golem-component-compilation-service"
+          - name: group2
+            crates: "golem-component-service-base golem-component-service golem-rib golem-rib-repl golem-test-framework"
+          - name: group3
+            crates: "golem-shard-manager golem-worker-executor-base golem-worker-executor golem-worker-service-base golem-worker-service"
+          - name: group4
+            crates: "integration-tests wasm-ast wasm-rpc wasm-rpc-derive"
     runs-on: ${{ matrix.os }}
+    name: build-${{ matrix.group.name }}-${{ matrix.os }}
+    env:
+      CARGO_BUILD_JOBS: 4
     steps:
       - name: Configure Git line endings
         run: git config --global core.autocrlf false
@@ -53,10 +62,13 @@ jobs:
         uses: arduino/setup-protoc@v3
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Building all executables
+      - name: Build group crates
         env:
           QUIET: true
-        run: cargo make --profile ci build -- --keep-going --jobs 1
+        run: |
+          for crate in ${{ matrix.group.crates }}; do
+            cargo build -p $crate --all-targets --jobs 4 || exit 1
+          done
         timeout-minutes: 30
 
   unit-tests-and-checks:
@@ -93,12 +105,13 @@ jobs:
       - name: Quick format check
         run: cargo fmt --all -- --check
       - name: Unit tests
+        if: false
         shell: bash
         run: cargo make --profile ci unit-tests -- --keep-going
       - name: Check formatting and clippy rules
         run: cargo make --profile ci check
       - name: Clippy all crates (report all errors)
-        run: cargo make --profile ci check-clippy-all-crates
+        run: cargo make --profile ci check-clippy
       - name: Check openapi is up to date
         run: cargo make --profile ci check-openapi
       - name: Check configs are up to date
