@@ -108,23 +108,30 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Check openapi is up to date
+        shell: bash
         run: cargo make --profile ci check-openapi
       - name: Check configs are up to date
+        shell: bash
         run: cargo make --profile ci check-configs
       - name: Quick format check
         if: false
+        shell: bash
         run: cargo fmt --all -- --check
       - name: Unit tests
         if: false
+        shell: bash
         run: cargo make --profile ci unit-tests -- --keep-going
       - name: Check formatting and clippy rules
         if: false
+        shell: bash
         run: cargo make --profile ci check
       - name: Clippy all crates (report all errors)
         if: false
+        shell: bash
         run: cargo make --profile ci check-clippy
       - name: Publish Test Report
         if: false
+        shell: bash
         uses: mikepenz/action-junit-report@v4
         with:
           report_paths: "**/target/report-*.xml"
