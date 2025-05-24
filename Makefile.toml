@@ -435,6 +435,18 @@ script = '''
   fi
 '''
 
+[tasks.diff-openapi.windows]
+description = "Checks if the generated openapi spec is the same as the one in the openapi directory (Windows override)"
+dependencies = ["merge-openapi"]
+script_runner = "powershell"
+script_extension = "ps1"
+script = '''
+if (Compare-Object (Get-Content "openapi/golem-service.yaml") (Get-Content "target/golem-service.yaml")) {
+    Write-Host "openapi/golem-service.yaml is not the same as produced by golem-service-yaml."
+    exit 1
+}
+'''
+
 ## ** GENERATE-OPENAPI **
 [tasks.generate-openapi]
 dependencies = [

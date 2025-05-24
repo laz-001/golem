@@ -131,7 +131,6 @@ jobs:
         run: cargo make --profile ci check-clippy
       - name: Publish Test Report
         if: false
-        shell: bash
         uses: mikepenz/action-junit-report@v4
         with:
           report_paths: "**/target/report-*.xml"
