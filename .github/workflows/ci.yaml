@@ -42,7 +42,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     name: build-${{ matrix.group.name }}-${{ matrix.os }}
     env:
-      CARGO_BUILD_JOBS: ${{ matrix.group.name == 'group6' && '8' || '4' }}
+      CARGO_BUILD_JOBS: ${{ matrix.group.name == 'group6' && '2' || '4' }}
     steps:
       - name: Configure Git line endings
         run: git config --global core.autocrlf false
@@ -74,7 +74,7 @@ jobs:
           for crate in ${{ matrix.group.crates }}; do
             cargo build -p $crate --all-targets || exit 1
           done
-        timeout-minutes: 30
+        timeout-minutes: 90
 
   unit-tests-and-checks:
     env:
