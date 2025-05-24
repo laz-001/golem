@@ -34,11 +34,11 @@ jobs:
           - name: group3
             crates: "golem-rib-repl golem-test-framework golem-shard-manager golem-worker-executor-base"
           - name: group4
-            crates: "golem-worker-executor golem-worker-service-base integration-tests"
+            crates: "golem-worker-executor golem-worker-service-base"
           - name: group5
-            crates: "golem-worker-service wasm-ast"
+            crates: "golem-worker-service golem-wasm-ast"
           - name: group6
-            crates: "golem-wasm-rpc golem-wasm-rpc-derive"
+            crates: "golem-wasm-rpc golem-wasm-rpc-derive integration-tests"
     runs-on: ${{ matrix.os }}
     name: build-${{ matrix.group.name }}-${{ matrix.os }}
     env:
