@@ -450,16 +450,18 @@ description = "Generates openapi spec from the code and saves it to the openapi 
 [tasks.generate-worker-service-openapi]
 description = "Generates openapi spec for worker service"
 cwd = "./target/debug"
-create_dir = ["../data"]
+script_runner = "bash"
 script = '''
+mkdir -pv ../data
 ./golem-worker-service --dump-openapi-yaml > ../golem-worker-service.yaml
 '''
 
 [tasks.generate-component-service-openapi]
 description = "Generates openapi spec for component service"
 cwd = "./target/debug"
-create_dir = ["../data"]
+script_runner = "bash"
 script = '''
+mkdir -pv ../data
 ./golem-component-service --dump-openapi-yaml > ../golem-component-service.yaml
 '''
 
