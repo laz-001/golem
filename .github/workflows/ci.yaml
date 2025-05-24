@@ -28,13 +28,17 @@ jobs:
         os: [windows-latest]
         group:
           - name: group1
-            crates: "golem-api-grpc golem-client golem-common golem-service-base golem-component-compilation-service"
+            crates: "golem-api-grpc golem-client golem-common golem-service-base"
           - name: group2
-            crates: "golem-component-service-base golem-component-service golem-rib golem-rib-repl golem-test-framework"
+            crates: "golem-component-compilation-service golem-component-service-base golem-component-service golem-rib"
           - name: group3
-            crates: "golem-shard-manager golem-worker-executor-base golem-worker-executor golem-worker-service-base golem-worker-service"
+            crates: "golem-rib-repl golem-test-framework golem-shard-manager golem-worker-executor-base"
           - name: group4
-            crates: "integration-tests wasm-ast wasm-rpc wasm-rpc-derive"
+            crates: "golem-worker-executor golem-worker-service-base integration-tests"
+          - name: group5
+            crates: "golem-worker-service wasm-ast"
+          - name: group6
+            crates: "wasm-rpc wasm-rpc-derive"
     runs-on: ${{ matrix.os }}
     name: build-${{ matrix.group.name }}-${{ matrix.os }}
     env:
