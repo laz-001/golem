@@ -111,11 +111,9 @@ jobs:
         shell: bash
         run: cargo fmt --all -- --check
       - name: Unit tests
-        if: false
         shell: bash
         run: cargo make --profile ci unit-tests -- --keep-going
       - name: Check formatting and clippy rules
-        if: false
         shell: bash
         run: cargo make --profile ci check
       - name: Check openapi is up to date
@@ -124,9 +122,6 @@ jobs:
       - name: Check configs are up to date
         shell: bash
         run: cargo make --profile ci check-configs
-      - name: Clippy all crates (report all errors)
-        shell: bash
-        run: cargo make --profile ci check-clippy
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v4
         if: always()
@@ -136,7 +131,6 @@ jobs:
           include_passed: true
 
   worker-tests:
-    if: false
     env:
       CARGO_BUILD_JOBS: 10
     strategy:
@@ -207,7 +201,6 @@ jobs:
           include_passed: true
 
   api-and-integration-tests:
-    if: false
     env:
       CARGO_BUILD_JOBS: 10
     strategy:
