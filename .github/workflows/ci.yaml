@@ -107,12 +107,12 @@ jobs:
         uses: arduino/setup-protoc@v3
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Check openapi is up to date
-        shell: bash
-        run: cargo make --profile ci check-openapi
       - name: Check configs are up to date
         shell: bash
         run: cargo make --profile ci check-configs
+      - name: Check openapi is up to date
+        shell: bash
+        run: cargo make --profile ci check-openapi
       - name: Quick format check
         if: false
         shell: bash
