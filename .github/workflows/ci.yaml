@@ -63,6 +63,7 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Build group crates
+        shell: bash
         env:
           QUIET: true
         run: |
@@ -108,14 +109,14 @@ jobs:
         if: false
         shell: bash
         run: cargo make --profile ci unit-tests -- --keep-going
-      - name: Check formatting and clippy rules
-        run: cargo make --profile ci check
       - name: Clippy all crates (report all errors)
         run: cargo make --profile ci check-clippy
       - name: Check openapi is up to date
         run: cargo make --profile ci check-openapi
       - name: Check configs are up to date
         run: cargo make --profile ci check-configs
+      - name: Check formatting and clippy rules
+        run: cargo make --profile ci check
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v4
         if: always()
