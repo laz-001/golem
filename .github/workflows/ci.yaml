@@ -38,7 +38,7 @@ jobs:
           - name: group5
             crates: "golem-worker-service wasm-ast"
           - name: group6
-            crates: "wasm-rpc wasm-rpc-derive"
+            crates: "golem-wasm-rpc golem-wasm-rpc-derive"
     runs-on: ${{ matrix.os }}
     name: build-${{ matrix.group.name }}-${{ matrix.os }}
     env:
