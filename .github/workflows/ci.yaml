@@ -32,17 +32,17 @@ jobs:
           - name: group2
             crates: "golem-component-compilation-service golem-component-service-base golem-component-service golem-rib"
           - name: group3
-            crates: "golem-rib-repl golem-test-framework golem-shard-manager golem-worker-executor-base"
+            crates: "golem-rib-repl golem-test-framework golem-shard-manager"
           - name: group4
-            crates: "golem-worker-executor golem-worker-service-base"
+            crates: "golem-worker-executor golem-worker-service-base golem-worker-executor-base"
           - name: group5
-            crates: "golem-worker-service golem-wasm-ast golem-wasm-rpc-derive"
+            crates: "golem-worker-service golem-wasm-ast golem-wasm-rpc-derive golem-wasm-rpc"
           - name: group6
-            crates: "golem-wasm-rpc integration-tests"
+            crates: "integration-tests"
     runs-on: ${{ matrix.os }}
     name: build-${{ matrix.group.name }}-${{ matrix.os }}
     env:
-      CARGO_BUILD_JOBS: 4
+      CARGO_BUILD_JOBS: ${{ matrix.group.name == 'group6' && '8' || '4' }}
     steps:
       - name: Configure Git line endings
         run: git config --global core.autocrlf false
