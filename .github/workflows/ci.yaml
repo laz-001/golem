@@ -104,19 +104,24 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Quick format check
+        shell: bash
         run: cargo fmt --all -- --check
       - name: Unit tests
         if: false
         shell: bash
         run: cargo make --profile ci unit-tests -- --keep-going
-      - name: Clippy all crates (report all errors)
-        run: cargo make --profile ci check-clippy
+      - name: Check formatting and clippy rules
+        shell: bash
+        run: cargo make --profile ci check
       - name: Check openapi is up to date
+        shell: bash
         run: cargo make --profile ci check-openapi
       - name: Check configs are up to date
+        shell: bash
         run: cargo make --profile ci check-configs
-      - name: Check formatting and clippy rules
-        run: cargo make --profile ci check
+      - name: Clippy all crates (report all errors)
+        shell: bash
+        run: cargo make --profile ci check-clippy
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v4
         if: always()
@@ -126,7 +131,7 @@ jobs:
           include_passed: true
 
   worker-tests:
-    # if: false # Disabled for faster iteration on Windows
+    if: false
     env:
       CARGO_BUILD_JOBS: 10
     strategy:
@@ -197,7 +202,7 @@ jobs:
           include_passed: true
 
   api-and-integration-tests:
-    # if: false # Disabled for faster iteration on Windows
+    if: false
     env:
       CARGO_BUILD_JOBS: 10
     strategy:
