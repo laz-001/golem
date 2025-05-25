@@ -183,7 +183,6 @@ jobs:
       - name: Setup Redis (Windows)
         if: runner.os == 'Windows'
         shell: pwsh
-        # Redis is started manually below, so auto-start is not applicable
         run: |
           $ProgressPreference = 'SilentlyContinue'
           Invoke-WebRequest -Uri "https://github.com/tporadowski/redis/releases/download/v5.0.14.1/Redis-x64-5.0.14.1.zip" -OutFile "redis.zip"
@@ -314,10 +313,10 @@ jobs:
         run: cargo component build -p golem-wasm-rpc --no-default-features --features stub
 
   docker-targets-build:
+    if: false
     env:
       CARGO_BUILD_JOBS: 10
     runs-on: ubuntu-22.04
-    if: false # Temporarily disabled
     strategy:
       fail-fast: false
       matrix:
@@ -357,20 +356,16 @@ jobs:
         uses: arduino/setup-protoc@v3
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-
       - run: cargo install cross
         if: ${{ matrix.platform.cross }}
-
       - name: Build executables
         run: cargo make --profile ci build-release -- --keep-going
         env:
           PLATFORM_OVERRIDE: ${{ matrix.platform.name }}
-
       - name: Prepare Targets
         env:
           PLATFORM_OVERRIDE: ${{ matrix.platform.name }}
         run: cargo make --profile ci package-release
-
       - uses: actions/upload-artifact@v4
         name: Upload Targets
         with:
@@ -378,10 +373,10 @@ jobs:
           path: target/${{ matrix.platform.target }}.tar
 
   docker-publish:
+    if: false
     runs-on: ubuntu-22.04
     needs:
       - docker-targets-build
-    if: false # Temporarily disabled
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -511,13 +506,13 @@ jobs:
           labels: ${{ steps.meta-golem-router.outputs.labels }}
 
   publish:
+    if: false
     needs:
       - build
       - unit-tests-and-checks
       - wasm-rpc-stub
       - worker-tests
       - api-and-integration-tests
-    if: false # Temporarily disabled
     env:
       CARGO_BUILD_JOBS: 10
     runs-on: ubuntu-22.04
@@ -551,10 +546,10 @@ jobs:
         run: cargo make --profile ci publish
 
   publish-slack-notification:
+    if: false
     needs:
       - publish
       - docker-publish
-    if: false # Temporarily disabled
     runs-on: ubuntu-22.04
     steps:
       - name: Publish Slack Notification
