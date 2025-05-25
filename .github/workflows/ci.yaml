@@ -66,7 +66,7 @@ jobs:
         uses: arduino/setup-protoc@v3
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build group crates
+      - name: Building all executables
         shell: bash
         env:
           QUIET: true
@@ -107,26 +107,21 @@ jobs:
         uses: arduino/setup-protoc@v3
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Check configs are up to date
-        shell: bash
-        run: cargo make --profile ci check-configs
-      - name: Check openapi is up to date
-        shell: bash
-        run: cargo make --profile ci check-openapi
-      - name: Quick format check
-        shell: bash
-        run: cargo fmt --all -- --check
       - name: Unit tests
         shell: bash
-        run: cargo make --profile ci unit-tests -- --keep-going
+        run: cargo make --profile ci unit-tests
       - name: Check formatting and clippy rules
         shell: bash
         run: cargo make --profile ci check
-      - name: Clippy all crates (report all errors)
+      - name: Check openapi is up to date
         shell: bash
-        run: cargo make --profile ci check-clippy
+        run: cargo make --profile ci check-openapi
+      - name: Check configs are up to date
+        shell: bash
+        run: cargo make --profile ci check-configs
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v4
+        if: always()
         with:
           report_paths: "**/target/report-*.xml"
           detailed_summary: true
@@ -136,7 +131,7 @@ jobs:
     env:
       CARGO_BUILD_JOBS: 10
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         os: [windows-latest]
         group:
@@ -191,7 +186,7 @@ jobs:
       - name: Worker Executor integration tests
         shell: bash
         continue-on-error: true
-        run: cargo make --profile ci worker-executor-tests-${{ matrix.group.name }} -- --keep-going
+        run: cargo make --profile ci worker-executor-tests-${{ matrix.group.name }}
         timeout-minutes: 40
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v4
@@ -205,7 +200,7 @@ jobs:
     env:
       CARGO_BUILD_JOBS: 10
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         os: [windows-latest]
         group:
@@ -264,7 +259,7 @@ jobs:
         continue-on-error: true
         env:
           QUIET: true
-        run: cargo make --profile ci ${{ matrix.group.name }} -- --keep-going
+        run: cargo make --profile ci ${{ matrix.group.name }}
         timeout-minutes: 30
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v4
@@ -316,6 +311,8 @@ jobs:
     if: false
     env:
       CARGO_BUILD_JOBS: 10
+    # runs-on: blacksmith-16vcpu-ubuntu-2204
+    # if: github.event_name == 'push' && github.ref_type == 'tag'
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
@@ -359,7 +356,7 @@ jobs:
       - run: cargo install cross
         if: ${{ matrix.platform.cross }}
       - name: Build executables
-        run: cargo make --profile ci build-release -- --keep-going
+        run: cargo make --profile ci build-release
         env:
           PLATFORM_OVERRIDE: ${{ matrix.platform.name }}
       - name: Prepare Targets
@@ -377,6 +374,7 @@ jobs:
     runs-on: ubuntu-22.04
     needs:
       - docker-targets-build
+    # if: github.event_name == 'push' && github.ref_type == 'tag'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -513,6 +511,7 @@ jobs:
       - wasm-rpc-stub
       - worker-tests
       - api-and-integration-tests
+    # if: "startsWith(github.ref, 'refs/tags/v')"
     env:
       CARGO_BUILD_JOBS: 10
     runs-on: ubuntu-22.04
@@ -550,7 +549,8 @@ jobs:
     needs:
       - publish
       - docker-publish
-    runs-on: ubuntu-22.04
+    # -    if: ${{ always() && startsWith(github.ref, 'refs/tags/v') }}
+    runs-on: ubuntu-22.04 # blacksmith
     steps:
       - name: Publish Slack Notification
         uses: rtCamp/action-slack-notify@v2
