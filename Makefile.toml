@@ -831,7 +831,7 @@ git diff --exit-code \
 [tasks.check-configs.windows]
 description = "Checks if generated configs are up to date (Windows override)"
 dependencies = ["generate-configs"]
-script_runner = "powershell"
+script_runner = "pwsh"
 script_extension = "ps1"
 script = '''
 $ErrorActionPreference = "Stop"
