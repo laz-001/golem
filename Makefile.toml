@@ -441,9 +441,12 @@ dependencies = ["merge-openapi"]
 script_runner = "powershell"
 script_extension = "ps1"
 script = '''
-if (Compare-Object (Get-Content "openapi/golem-service.yaml") (Get-Content "target/golem-service.yaml")) {
+git diff --ignore-cr-at-eol --exit-code openapi/golem-service.yaml target/golem-service.yaml
+if ($LASTEXITCODE -ne 0) {
     Write-Host "openapi/golem-service.yaml is not the same as produced by golem-service-yaml."
     exit 1
+} else {
+    Write-Host "Latest Golem OpenAPI spec version detected."
 }
 '''
 
@@ -823,6 +826,38 @@ git diff --exit-code \
     golem-worker-service/config/worker-service.sample.env \
     golem-worker-executor/config/worker-executor.toml \
     golem-worker-executor/config/worker-executor.sample.env
+'''
+
+[tasks.check-configs.windows]
+description = "Checks if generated configs are up to date (Windows override)"
+dependencies = ["generate-configs"]
+script_runner = "powershell"
+script_extension = "ps1"
+script = '''
+$ErrorActionPreference = "Stop"
+$files = @(
+    "golem-shard-manager/config/shard-manager.toml",
+    "golem-shard-manager/config/shard-manager.sample.env",
+    "golem-component-compilation-service/config/component-compilation-service.toml",
+    "golem-component-compilation-service/config/component-compilation-service.sample.env",
+    "golem-component-service/config/component-service.toml",
+    "golem-component-service/config/component-service.sample.env",
+    "golem-worker-service/config/worker-service.toml",
+    "golem-worker-service/config/worker-service.sample.env",
+    "golem-worker-executor/config/worker-executor.toml",
+    "golem-worker-executor/config/worker-executor.sample.env"
+)
+$failed = $false
+foreach ($file in $files) {
+    git diff --ignore-cr-at-eol --exit-code $file
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "$file is not up to date with committed version."
+        $failed = $true
+    } else {
+        Write-Host "$file is up to date."
+    }
+}
+if ($failed) { exit 1 } else { Write-Host "All config files are up to date." }
 '''
 
 ## ** Elastic tasks **
