@@ -438,7 +438,7 @@ script = '''
 [tasks.diff-openapi.windows]
 description = "Checks if the generated openapi spec is the same as the one in the openapi directory (Windows override)"
 dependencies = ["merge-openapi"]
-script_runner = "powershell"
+script_runner = "pwsh"
 script_extension = "ps1"
 script = '''
 git diff --ignore-cr-at-eol --exit-code openapi/golem-service.yaml target/golem-service.yaml
