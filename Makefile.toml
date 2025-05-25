@@ -883,7 +883,7 @@ docker compose --project-directory log-tools/elastic down --volumes
 [tasks.generate-worker-service-openapi.windows]
 description = "Generates openapi spec for worker service (Windows override)"
 cwd = "./target"
-script_runner = "powershell"
+script_runner = "pwsh"
 script_extension = "ps1"
 script = '''
 mkdir data
@@ -894,7 +894,7 @@ cargo run -p golem-worker-service -- --dump-openapi-yaml | Out-File -Encoding ut
 [tasks.generate-component-service-openapi.windows]
 description = "Generates openapi spec for component service (Windows override)"
 cwd = "./target"
-script_runner = "powershell"
+script_runner = "pwsh"
 script_extension = "ps1"
 script = '''
 mkdir data
