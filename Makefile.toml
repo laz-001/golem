@@ -879,3 +879,25 @@ description = "Stops and removes the elastic environment, including all data"
 script = '''
 docker compose --project-directory log-tools/elastic down --volumes
 '''
+
+[tasks.generate-worker-service-openapi.windows]
+description = "Generates openapi spec for worker service (Windows override)"
+cwd = "./target"
+script_runner = "powershell"
+script_extension = "ps1"
+script = '''
+mkdir data
+cd debug
+cargo run -p golem-worker-service -- --dump-openapi-yaml | Out-File -Encoding utf8NoBOM -FilePath ../golem-worker-service.yaml
+'''
+
+[tasks.generate-component-service-openapi.windows]
+description = "Generates openapi spec for component service (Windows override)"
+cwd = "./target"
+script_runner = "powershell"
+script_extension = "ps1"
+script = '''
+mkdir data
+cd debug
+cargo run -p golem-component-service -- --dump-openapi-yaml | Out-File -Encoding utf8NoBOM -FilePath ../golem-component-service.yaml
+'''
