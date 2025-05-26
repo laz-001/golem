@@ -464,18 +464,38 @@ description = "Generates openapi spec from the code and saves it to the openapi 
 
 [tasks.generate-worker-service-openapi]
 description = "Generates openapi spec for worker service"
-cwd = "./target"
+cwd = "./target/debug"
 script = '''
-mkdir data
+mkdir -pv ../data
+./golem-worker-service --dump-openapi-yaml > ../golem-worker-service.yaml
+'''
+
+[tasks.generate-worker-service-openapi.windows]
+description = "Generates openapi spec for worker service (Windows override)"
+cwd = "./target"
+script_runner = "pwsh"
+script_extension = "ps1"
+script = '''
+mkdir data -ErrorAction SilentlyContinue
 cd debug
 cargo run -p golem-worker-service -- --dump-openapi-yaml > ../golem-worker-service.yaml
 '''
 
 [tasks.generate-component-service-openapi]
 description = "Generates openapi spec for component service"
-cwd = "./target"
+cwd = "./target/debug"
 script = '''
-mkdir data
+mkdir -pv ../data
+./golem-component-service --dump-openapi-yaml > ../golem-component-service.yaml
+'''
+
+[tasks.generate-component-service-openapi.windows]
+description = "Generates openapi spec for component service (Windows override)"
+cwd = "./target"
+script_runner = "pwsh"
+script_extension = "ps1"
+script = '''
+mkdir data -ErrorAction SilentlyContinue
 cd debug
 cargo run -p golem-component-service -- --dump-openapi-yaml > ../golem-component-service.yaml
 '''
@@ -813,7 +833,7 @@ $env:RUST_BACKTRACE = 1
 [tasks.check-configs]
 description = "Generates configs from code and checks if it's committed"
 dependencies = ["generate-configs"]
-script_runner = "bash"
+
 script = '''
 git diff --exit-code \
     golem-shard-manager/config/shard-manager.toml \
@@ -878,26 +898,4 @@ docker compose --project-directory log-tools/elastic stop
 description = "Stops and removes the elastic environment, including all data"
 script = '''
 docker compose --project-directory log-tools/elastic down --volumes
-'''
-
-[tasks.generate-worker-service-openapi.windows]
-description = "Generates openapi spec for worker service (Windows override)"
-cwd = "./target"
-script_runner = "pwsh"
-script_extension = "ps1"
-script = '''
-mkdir data
-cd debug
-cargo run -p golem-worker-service -- --dump-openapi-yaml | Out-File -Encoding utf8NoBOM -FilePath ../golem-worker-service.yaml
-'''
-
-[tasks.generate-component-service-openapi.windows]
-description = "Generates openapi spec for component service (Windows override)"
-cwd = "./target"
-script_runner = "pwsh"
-script_extension = "ps1"
-script = '''
-mkdir data
-cd debug
-cargo run -p golem-component-service -- --dump-openapi-yaml | Out-File -Encoding utf8NoBOM -FilePath ../golem-component-service.yaml
 '''
