@@ -491,6 +491,38 @@ if ($LASTEXITCODE -ne 0) {
 } else {
     Write-Host "Latest Golem OpenAPI spec version detected."
 }
+
+git diff --ignore-cr-at-eol --exit-code openapi/cloud-spec.yaml target/cloud-spec.yaml
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "openapi/cloud-spec.yaml is not the same as produced by cloud-service."
+    exit 1
+} else {
+    Write-Host "Latest Golem OpenAPI spec version detected."
+}
+
+git diff --ignore-cr-at-eol --exit-code openapi/cloud-worker-spec.yaml target/cloud-worker-spec.yaml
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "openapi/cloud-worker-spec.yaml is not the same as produced by cloud-worker-service."
+    exit 1
+} else {
+    Write-Host "Latest Golem OpenAPI spec version detected."
+}
+
+git diff --ignore-cr-at-eol --exit-code openapi/cloud-component-spec.yaml target/cloud-component-spec.yaml
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "openapi/cloud-component-spec.yaml is not the same as produced by cloud-component-service."
+    exit 1
+} else {
+    Write-Host "Latest Golem OpenAPI spec version detected."
+}
+
+git diff --ignore-cr-at-eol --exit-code openapi/golem-cloud-service.yaml target/golem-cloud-service.yaml
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "openapi/golem-cloud-service.yaml is not the same as produced by golem-cloud-service.yaml."
+    exit 1
+} else {
+    Write-Host "Latest Golem OpenAPI spec version detected."
+}
 '''
 
 ## ** GENERATE-OPENAPI **
@@ -964,16 +996,30 @@ script_extension = "ps1"
 script = '''
 $env:RUST_BACKTRACE = 1
 
-.\target\debug\golem-shard-manager.exe --dump-config-default-toml | Out-File -Encoding utf8 -FilePath golem-shard-manager/config/shard-manager.toml
-.\target\debug\golem-shard-manager.exe --dump-config-default-env-var | Out-File -Encoding utf8 -FilePath golem-shard-manager/config/shard-manager.sample.env
-.\target\debug\golem-component-compilation-service.exe --dump-config-default-toml | Out-File -Encoding utf8 -FilePath golem-component-compilation-service/config/component-compilation-service.toml
-.\target\debug\golem-component-compilation-service.exe --dump-config-default-env-var | Out-File -Encoding utf8 -FilePath golem-component-compilation-service/config/component-compilation-service.sample.env
-.\target\debug\golem-component-service.exe --dump-config-default-toml | Out-File -Encoding utf8 -FilePath golem-component-service/config/component-service.toml
-.\target\debug\golem-component-service.exe --dump-config-default-env-var | Out-File -Encoding utf8 -FilePath golem-component-service/config/component-service.sample.env
-.\target\debug\golem-worker-service.exe --dump-config-default-toml | Out-File -Encoding utf8 -FilePath golem-worker-service/config/worker-service.toml
-.\target\debug\golem-worker-service.exe --dump-config-default-env-var | Out-File -Encoding utf8 -FilePath golem-worker-service/config/worker-service.sample.env
-.\target\debug\worker-executor.exe --dump-config-default-toml | Out-File -Encoding utf8 -FilePath golem-worker-executor/config/worker-executor.toml
-.\target\debug\worker-executor.exe --dump-config-default-env-var | Out-File -Encoding utf8 -FilePath golem-worker-executor/config/worker-executor.sample.env
+.\\target\\debug\\golem-shard-manager.exe --dump-config-default-toml | Out-File -Encoding utf8 -FilePath golem-shard-manager/config/shard-manager.toml
+.\\target\\debug\\golem-shard-manager.exe --dump-config-default-env-var | Out-File -Encoding utf8 -FilePath golem-shard-manager/config/shard-manager.sample.env
+.\\target\\debug\\golem-component-compilation-service.exe --dump-config-default-toml | Out-File -Encoding utf8 -FilePath golem-component-compilation-service/config/component-compilation-service.toml
+.\\target\\debug\\golem-component-compilation-service.exe --dump-config-default-env-var | Out-File -Encoding utf8 -FilePath golem-component-compilation-service/config/component-compilation-service.sample.env
+.\\target\\debug\\golem-component-service.exe --dump-config-default-toml | Out-File -Encoding utf8 -FilePath golem-component-service/config/component-service.toml
+.\\target\\debug\\golem-component-service.exe --dump-config-default-env-var | Out-File -Encoding utf8 -FilePath golem-component-service/config/component-service.sample.env
+.\\target\\debug\\golem-worker-service.exe --dump-config-default-toml | Out-File -Encoding utf8 -FilePath golem-worker-service/config/worker-service.toml
+.\\target\\debug\\golem-worker-service.exe --dump-config-default-env-var | Out-File -Encoding utf8 -FilePath golem-worker-service/config/worker-service.sample.env
+.\\target\\debug\\worker-executor.exe --dump-config-default-toml | Out-File -Encoding utf8 -FilePath golem-worker-executor/config/worker-executor.toml
+.\\target\\debug\\worker-executor.exe --dump-config-default-env-var | Out-File -Encoding utf8 -FilePath golem-worker-executor/config/worker-executor.sample.env
+.\\target\\debug\\cloud-shard-manager.exe --dump-config-default-toml | Out-File -Encoding utf8 -FilePath cloud-shard-manager/config/shard-manager.toml
+.\\target\\debug\\cloud-shard-manager.exe --dump-config-default-env-var | Out-File -Encoding utf8 -FilePath cloud-shard-manager/config/shard-manager.sample.env
+.\\target\\debug\\cloud-component-compilation-service.exe --dump-config-default-toml | Out-File -Encoding utf8 -FilePath cloud-component-compilation-service/config/component-compilation-service.toml
+.\\target\\debug\\cloud-component-compilation-service.exe --dump-config-default-env-var | Out-File -Encoding utf8 -FilePath cloud-component-compilation-service/config/component-compilation-service.sample.env
+.\\target\\debug\\cloud-component-service.exe --dump-config-default-toml | Out-File -Encoding utf8 -FilePath cloud-component-service/config/component-service.toml
+.\\target\\debug\\cloud-component-service.exe --dump-config-default-env-var | Out-File -Encoding utf8 -FilePath cloud-component-service/config/component-service.sample.env
+.\\target\\debug\\cloud-worker-service.exe --dump-config-default-toml | Out-File -Encoding utf8 -FilePath cloud-worker-service/config/worker-service.toml
+.\\target\\debug\\cloud-worker-service.exe --dump-config-default-env-var | Out-File -Encoding utf8 -FilePath cloud-worker-service/config/worker-service.sample.env
+.\\target\\debug\\cloud-debugging-service.exe --dump-config-default-toml | Out-File -Encoding utf8 -FilePath cloud-debugging-service/config/debug-worker-executor.toml
+.\\target\\debug\\cloud-debugging-service.exe --dump-config-default-env-var | Out-File -Encoding utf8 -FilePath cloud-debugging-service/config/debug-worker-executor.sample.env
+.\\target\\debug\\cloud-worker-executor.exe --dump-config-default-toml | Out-File -Encoding utf8 -FilePath cloud-worker-executor/config/worker-executor.toml
+.\\target\\debug\\cloud-worker-executor.exe --dump-config-default-env-var | Out-File -Encoding utf8 -FilePath cloud-worker-executor/config/worker-executor.sample.env
+.\\target\\debug\\cloud-service.exe --dump-config-default-toml | Out-File -Encoding utf8 -FilePath cloud-service/config/cloud-service.toml
+.\\target\\debug\\cloud-service.exe --dump-config-default-env-var | Out-File -Encoding utf8 -FilePath cloud-service/config/cloud-service.sample.env
 '''
 
 ## ** CHECK CONFIGS **
@@ -1025,7 +1071,19 @@ $files = @(
     "golem-worker-service/config/worker-service.toml",
     "golem-worker-service/config/worker-service.sample.env",
     "golem-worker-executor/config/worker-executor.toml",
-    "golem-worker-executor/config/worker-executor.sample.env"
+    "golem-worker-executor/config/worker-executor.sample.env",
+    "cloud-shard-manager/config/shard-manager.toml",
+    "cloud-shard-manager/config/shard-manager.sample.env",
+    "cloud-component-compilation-service/config/component-compilation-service.toml",
+    "cloud-component-compilation-service/config/component-compilation-service.sample.env",
+    "cloud-component-service/config/component-service.toml",
+    "cloud-component-service/config/component-service.sample.env",
+    "cloud-worker-service/config/worker-service.toml",
+    "cloud-worker-service/config/worker-service.sample.env",
+    "cloud-worker-executor/config/worker-executor.toml",
+    "cloud-worker-executor/config/worker-executor.sample.env",
+    "cloud-service/config/cloud-service.toml",
+    "cloud-service/config/cloud-service.sample.env"
 )
 $failed = $false
 foreach ($file in $files) {
