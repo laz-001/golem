@@ -69,7 +69,10 @@ jobs:
       - name: Building all executables
         env:
           QUIET: true
+        shell: bash
         run: |
+          # TODO: This bash loop needs to be refactored to a cross-platform solution
+          # or individual cargo-make tasks if issues persist on non-bash shells.
           for crate in ${{ matrix.group.crates }}; do
             cargo build -p $crate --all-targets || exit 1
           done
