@@ -29,7 +29,7 @@ default_to_workspace = false # by default, we run cargo commands on top level in
 skip_core_tasks = true       # we are not using the predefined cargo-make flows, instead redefine here for more clarity
 
 [env]
-# within commands, use "@@remove-empty(JUNIT_OPTS)" to avoid problems with "" expansion on windows
+# within commands, use "@@split(JUNIT_OPTS, )" to properly split JUNIT_OPTS arguments
 JUNIT_OPTS = ""
 AWS_EC2_METADATA_DISABLED = "true"
 
@@ -256,7 +256,7 @@ description = "Runs only untagged worker-executor-tests"
 env = { "RUST_BACKTRACE" = "1", "WASMTIME_BACKTRACE_DETAILS" = "1", "RUST_LOG" = "info", "RUST_TEST_TIME_INTEGRATION" = "5000,30000" }
 command = "cargo"
 args = [
-    "test", "--package", "golem-worker-executor-base", "--test", "integration", ":tag:", "--", "--report-time", "--nocapture", "@@remove-empty(JUNIT_OPTS)"
+    "test", "--package", "golem-worker-executor-base", "--test", "integration", ":tag:", "--", "--report-time", "--nocapture", "@@split(JUNIT_OPTS, )"
 ]
 
 [tasks.worker-executor-tests-group1]
@@ -265,7 +265,7 @@ description = "Runs worker executor tests only (group 1/8)"
 env = { "RUST_BACKTRACE" = "1", "WASMTIME_BACKTRACE_DETAILS" = "1", "RUST_LOG" = "info", "RUST_TEST_TIME_INTEGRATION" = "5000,30000" }
 command = "cargo"
 args = [
-    "test", "--package", "golem-worker-executor-base", "--test", "integration", ":tag:group1", "--", "--report-time", "--nocapture", "@@remove-empty(JUNIT_OPTS)"
+    "test", "--package", "golem-worker-executor-base", "--test", "integration", ":tag:group1", "--", "--report-time", "--nocapture", "@@split(JUNIT_OPTS, )"
 ]
 
 [tasks.worker-executor-tests-group2]
@@ -274,7 +274,7 @@ description = "Runs worker executor tests only (group 2/8)"
 env = { "RUST_BACKTRACE" = "1", "WASMTIME_BACKTRACE_DETAILS" = "1", "RUST_LOG" = "info", "RUST_TEST_TIME_INTEGRATION" = "5000,30000" }
 command = "cargo"
 args = [
-    "test", "--package", "golem-worker-executor-base", "--test", "integration", ":tag:group2", "--", "--report-time", "--nocapture", "@@remove-empty(JUNIT_OPTS)"
+    "test", "--package", "golem-worker-executor-base", "--test", "integration", ":tag:group2", "--", "--report-time", "--nocapture", "@@split(JUNIT_OPTS, )"
 ]
 
 [tasks.worker-executor-tests-group3]
@@ -283,7 +283,7 @@ description = "Runs worker executor tests only (group 3/8)"
 env = { "RUST_BACKTRACE" = "1", "WASMTIME_BACKTRACE_DETAILS" = "1", "RUST_LOG" = "info", "RUST_TEST_TIME_INTEGRATION" = "5000,30000" }
 command = "cargo"
 args = [
-    "test", "--package", "golem-worker-executor-base", "--test", "integration", ":tag:group3", "--", "--report-time", "--nocapture", "@@remove-empty(JUNIT_OPTS)"
+    "test", "--package", "golem-worker-executor-base", "--test", "integration", ":tag:group3", "--", "--report-time", "--nocapture", "@@split(JUNIT_OPTS, )"
 ]
 
 [tasks.worker-executor-tests-group4]
@@ -292,7 +292,7 @@ description = "Runs worker executor tests only (group 4/8)"
 env = { "RUST_BACKTRACE" = "1", "WASMTIME_BACKTRACE_DETAILS" = "1", "RUST_LOG" = "info", "RUST_TEST_TIME_INTEGRATION" = "5000,30000" }
 command = "cargo"
 args = [
-    "test", "--package", "golem-worker-executor-base", "--test", "integration", ":tag:group4", "--", "--report-time", "--nocapture", "@@remove-empty(JUNIT_OPTS)"
+    "test", "--package", "golem-worker-executor-base", "--test", "integration", ":tag:group4", "--", "--report-time", "--nocapture", "@@split(JUNIT_OPTS, )"
 ]
 
 [tasks.worker-executor-tests-group5]
@@ -301,7 +301,7 @@ description = "Runs worker executor tests only (group 5/8)"
 env = { "RUST_BACKTRACE" = "1", "WASMTIME_BACKTRACE_DETAILS" = "1", "RUST_LOG" = "info", "RUST_TEST_TIME_INTEGRATION" = "5000,30000" }
 command = "cargo"
 args = [
-    "test", "--package", "golem-worker-executor-base", "--test", "integration", ":tag:group5", "--", "--report-time", "--nocapture", "@@remove-empty(JUNIT_OPTS)"
+    "test", "--package", "golem-worker-executor-base", "--test", "integration", ":tag:group5", "--", "--report-time", "--nocapture", "@@split(JUNIT_OPTS, )"
 ]
 
 [tasks.worker-executor-tests-group6]
@@ -310,7 +310,7 @@ description = "Runs worker executor tests only (group 6/8)"
 env = { "RUST_BACKTRACE" = "1", "WASMTIME_BACKTRACE_DETAILS" = "1", "RUST_LOG" = "info", "RUST_TEST_TIME_INTEGRATION" = "5000,30000" }
 command = "cargo"
 args = [
-    "test", "--package", "golem-worker-executor-base", "--test", "integration", ":tag:group6", "--", "--report-time", "--nocapture", "@@remove-empty(JUNIT_OPTS)"
+    "test", "--package", "golem-worker-executor-base", "--test", "integration", ":tag:group6", "--", "--report-time", "--nocapture", "@@split(JUNIT_OPTS, )"
 ]
 
 [tasks.worker-executor-tests-group7]
@@ -319,7 +319,7 @@ description = "Runs worker executor tests only (group 7/8)"
 env = { "RUST_BACKTRACE" = "1", "WASMTIME_BACKTRACE_DETAILS" = "1", "RUST_LOG" = "info", "RUST_TEST_TIME_INTEGRATION" = "5000,30000" }
 command = "cargo"
 args = [
-    "test", "--package", "golem-worker-executor-base", "--test", "integration", ":tag:group7", "--", "--report-time", "--nocapture", "@@remove-empty(JUNIT_OPTS)"
+    "test", "--package", "golem-worker-executor-base", "--test", "integration", ":tag:group7", "--", "--report-time", "--nocapture", "@@split(JUNIT_OPTS, )"
 ]
 
 [tasks.worker-executor-tests-group8]
@@ -328,7 +328,7 @@ description = "Runs worker executor tests only (group 8/8)"
 env = { "RUST_BACKTRACE" = "1", "WASMTIME_BACKTRACE_DETAILS" = "1", "RUST_LOG" = "info", "RUST_TEST_TIME_INTEGRATION" = "5000,30000" }
 command = "cargo"
 args = [
-    "test", "--package", "golem-worker-executor-base", "--test", "integration", ":tag:group8", "--", "--report-time", "--nocapture", "@@remove-empty(JUNIT_OPTS)"
+    "test", "--package", "golem-worker-executor-base", "--test", "integration", ":tag:group8", "--", "--report-time", "--nocapture", "@@split(JUNIT_OPTS, )"
 ]
 
 [tasks.integration-tests]
@@ -347,7 +347,7 @@ dependencies = ["build-bins"]
 env = { "RUST_LOG" = "info", "RUST_BACKTRACE" = "1" }
 command = "cargo"
 args = [
-    "test", "--package", "integration-tests", "--test", "integration", "--", "--nocapture", "--report-time", "@@remove-empty(JUNIT_OPTS)"
+    "test", "--package", "integration-tests", "--test", "integration", "--", "--nocapture", "--report-time", "@@split(JUNIT_OPTS, )"
 ]
 
 [tasks.integration-tests-group2]
@@ -356,7 +356,7 @@ dependencies = ["wit"]
 env = { "RUST_LOG" = "info", "RUST_BACKTRACE" = "1" }
 command = "cargo"
 args = [
-    "test", "--package", "golem-component-service-base", "--test", "tests", "--", "--nocapture", "--report-time", "@@remove-empty(JUNIT_OPTS)"
+    "test", "--package", "golem-component-service-base", "--test", "tests", "--", "--nocapture", "--report-time", "@@split(JUNIT_OPTS, )"
 ]
 
 [tasks.integration-tests-group3]
@@ -378,7 +378,7 @@ dependencies = ["wit"]
 env = { "RUST_LOG" = "info", "RUST_BACKTRACE" = "1" }
 command = "cargo"
 args = [
-    "test", "--package", "golem-service-base", "--test", "integration", "--", "--nocapture", "--report-time", "@@remove-empty(JUNIT_OPTS)"
+    "test", "--package", "golem-service-base", "--test", "integration", "--", "--nocapture", "--report-time", "@@split(JUNIT_OPTS, )"
 ]
 
 [tasks.integration-tests-group5]
@@ -387,7 +387,7 @@ dependencies = ["build-bins"]
 env = { "RUST_LOG" = "info", "RUST_BACKTRACE" = "1" }
 command = "cargo"
 args = [
-    "test", "--package", "integration-tests", "--test", "sharding", "--", "--report-time", "@@remove-empty(JUNIT_OPTS)"
+    "test", "--package", "integration-tests", "--test", "sharding", "--", "--report-time", "@@split(JUNIT_OPTS, )"
 ]
 
 [tasks.sharding-tests-debug]
@@ -418,7 +418,7 @@ dependencies = ["build-bins"]
 env = { "RUST_LOG" = "info", "RUST_BACKTRACE" = "1", "GOLEM_CLIENT_PROTOCOL" = "http" }
 command = "cargo"
 args = [
-    "test", "--package", "integration-tests", "--test", "api", "--", "--nocapture", "--report-time", "@@remove-empty(JUNIT_OPTS)"
+    "test", "--package", "integration-tests", "--test", "api", "--", "--nocapture", "--report-time", "@@split(JUNIT_OPTS, )"
 ]
 
 [tasks.api-tests-grpc]
@@ -427,7 +427,7 @@ dependencies = ["build-bins"]
 env = { "RUST_LOG" = "info", "RUST_BACKTRACE" = "1", "GOLEM_CLIENT_PROTOCOL" = "grpc" }
 command = "cargo"
 args = [
-    "test", "--package", "integration-tests", "--test", "api", "--", ":tag:", "--nocapture", "--report-time", "@@remove-empty(JUNIT_OPTS)"
+    "test", "--package", "integration-tests", "--test", "api", "--", ":tag:", "--nocapture", "--report-time", "@@split(JUNIT_OPTS, )"
 ]
 
 ## ** CHECK-OPENAPI **
