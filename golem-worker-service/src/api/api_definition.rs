@@ -432,7 +432,32 @@ mod test {
 
     impl Drop for SqliteDb<'_> {
         fn drop(&mut self) {
+            #[cfg(not(windows))]
             std::fs::remove_file(&self.db_path).unwrap();
+
+            #[cfg(windows)]
+            {
+                // Implement a minimal retry mechanism for file deletion
+                // to handle cases where the file might still be locked by SQLite on Windows
+                let mut attempts = 0;
+                let max_attempts = 5;
+                let delay = std::time::Duration::from_millis(200);
+
+                while attempts < max_attempts {
+                    match std::fs::remove_file(&self.db_path) {
+                        Ok(_) => return,
+                        Err(e) => {
+                            attempts += 1;
+                            if attempts >= max_attempts {
+                                // Log error but don't fail the test
+                                tracing::warn!("Cannot delete SQLite database at {}, leaving in temp dir: {}", self.db_path, e);
+                                return;
+                            }
+                            std::thread::sleep(delay);
+                        }
+                    }
+                }
+            }
         }
     }
 
