@@ -449,8 +449,12 @@ mod test {
                         Err(e) => {
                             attempts += 1;
                             if attempts >= max_attempts {
-                                // Log error but don't fail the test
-                                tracing::warn!("Cannot delete SQLite database at {}, leaving in temp dir: {}", self.db_path, e);
+                                // Log error but don\'t fail the test
+                                tracing::warn!(
+                                    "Cannot delete SQLite database at {}, leaving in temp dir: {}",
+                                    self.db_path,
+                                    e
+                                );
                                 return;
                             }
                             std::thread::sleep(delay);
