@@ -18,7 +18,7 @@ permissions:
   pull-requests: write
 
 env:
-  BUILD_TARGET: "x86_64-unknown-linux-gnu"
+  BUILD_TARGET: "x86_64-pc-windows-msvc"
 
 jobs:
   build:
@@ -212,7 +212,9 @@ jobs:
           $ProgressPreference = 'SilentlyContinue'
           Invoke-WebRequest -Uri "https://github.com/tporadowski/redis/releases/download/v5.0.14.1/Redis-x64-5.0.14.1.zip" -OutFile "redis.zip"
           Expand-Archive -Path redis.zip -DestinationPath redis
-          Start-Process -FilePath "redis\\redis-server.exe" -ArgumentList "--maxheap 256mb" -NoNewWindow
+          # Add Redis to PATH so SpawnedRedis can find redis-server.exe
+          echo "$env:GITHUB_WORKSPACE\redis" >> $env:GITHUB_PATH
+          # Start-Process -FilePath "redis\\redis-server.exe" -ArgumentList "--maxmemory 256mb" -NoNewWindow
       - name: Worker Executor integration tests
         continue-on-error: false
         run: cargo make --profile ci worker-executor-tests-${{ matrix.group.name }}
@@ -298,7 +300,9 @@ jobs:
           $ProgressPreference = 'SilentlyContinue'
           Invoke-WebRequest -Uri "https://github.com/tporadowski/redis/releases/download/v5.0.14.1/Redis-x64-5.0.14.1.zip" -OutFile "redis.zip"
           Expand-Archive -Path redis.zip -DestinationPath redis
-          Start-Process -FilePath "redis\\redis-server.exe" -ArgumentList "--maxheap 256mb" -NoNewWindow
+          # Add Redis to PATH so SpawnedRedis can find redis-server.exe
+          echo "$env:GITHUB_WORKSPACE\redis" >> $env:GITHUB_PATH
+          # Start-Process -FilePath "redis\\redis-server.exe" -ArgumentList "--maxmemory 256mb" -NoNewWindow
       - name: ${{ matrix.group.description }}
         continue-on-error: false
         env:
