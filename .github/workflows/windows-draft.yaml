@@ -82,6 +82,7 @@ jobs:
   unit-tests: # Renamed from unit-tests-and-checks and modified
     env:
       CARGO_BUILD_JOBS: 10
+      DOCKER_DEFAULT_PLATFORM: linux/amd64 # Added this line
     strategy:
       fail-fast: false
       matrix:
@@ -161,6 +162,7 @@ jobs:
   worker-tests:
     env:
       CARGO_BUILD_JOBS: 10
+      DOCKER_DEFAULT_PLATFORM: linux/amd64 # Added this line
     strategy:
       fail-fast: true
       matrix:
@@ -231,6 +233,7 @@ jobs:
   api-and-integration-tests:
     env:
       CARGO_BUILD_JOBS: 8
+      DOCKER_DEFAULT_PLATFORM: linux/amd64 # Added this line
     strategy:
       fail-fast: true
       matrix:
