@@ -36,7 +36,10 @@ AWS_EC2_METADATA_DISABLED = "true"
 [env.ci]
 CARGO_INCREMENTAL = "false"
 # CARGO_LOG="cargo::core::compiler::fingerprint=trace"
-JUNIT_OPTS = "--format junit --logfile target/report.xml"
+
+#!!! Disable for now, due to problems on windows runners
+# JUNIT_OPTS = "--format junit --logfile target/report.xml"
+JUNIT_OPTS = ""
 
 [tasks.default]
 description = "This is the task that gets executed by 'cargo make' when no task is specified"
