@@ -182,6 +182,18 @@ jobs:
     steps:
       - name: Configure Git line endings
         run: git config --global core.autocrlf false
+      - name: Configure Docker for testcontainers
+        run: |
+          # Pre-pull Linux platform images to force platform resolution
+          Write-Host "Pre-pulling Docker images with Linux platform..."
+          docker pull --platform linux/amd64 postgres:14.7
+          docker pull --platform linux/amd64 minio/minio:RELEASE.2022-02-07T08-17-33Z  
+          docker pull --platform linux/amd64 redis:7.0-alpine
+          
+          # Verify Docker setup
+          docker version
+          docker images | findstr -E "(postgres|minio|redis)"
+        shell: pwsh
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -255,6 +267,18 @@ jobs:
     steps:
       - name: Configure Git line endings
         run: git config --global core.autocrlf false
+      - name: Configure Docker for testcontainers
+        run: |
+          # Pre-pull Linux platform images to force platform resolution
+          Write-Host "Pre-pulling Docker images with Linux platform..."
+          docker pull --platform linux/amd64 postgres:14.7
+          docker pull --platform linux/amd64 minio/minio:RELEASE.2022-02-07T08-17-33Z  
+          docker pull --platform linux/amd64 redis:7.0-alpine
+          
+          # Verify Docker setup
+          docker version
+          docker images | findstr -E "(postgres|minio|redis)"
+        shell: pwsh
       - name: Checkout
         uses: actions/checkout@v4
         with:
