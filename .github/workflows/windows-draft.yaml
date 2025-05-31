@@ -26,7 +26,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-latest]
+        os: [windows-2025]
         group:
           - name: group1
             crates: "golem-api-grpc golem-client golem-common golem-service-base"
@@ -86,7 +86,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-latest]
+        os: [windows-2025]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Configure Git line endings
@@ -127,7 +127,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-latest]
+        os: [windows-2025]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Configure Git line endings
@@ -166,7 +166,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [windows-latest]
+        os: [windows-2025]
         group:
           - name: untagged
           - name: group1
@@ -182,18 +182,6 @@ jobs:
     steps:
       - name: Configure Git line endings
         run: git config --global core.autocrlf false
-      - name: Configure Docker for testcontainers
-        run: |
-          # Pre-pull Linux platform images to force platform resolution
-          Write-Host "Pre-pulling Docker images with Linux platform..."
-          docker pull --platform linux/amd64 postgres:14.7
-          docker pull --platform linux/amd64 minio/minio:RELEASE.2022-02-07T08-17-33Z  
-          docker pull --platform linux/amd64 redis:7.0-alpine
-          
-          # Verify Docker setup
-          docker version
-          docker images | findstr -E "(postgres|minio|redis)"
-        shell: pwsh
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -249,7 +237,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [windows-latest]
+        os: [windows-2025]
         group:
           - name: integration-tests-group1
             description: "Full integration tests"
@@ -267,18 +255,6 @@ jobs:
     steps:
       - name: Configure Git line endings
         run: git config --global core.autocrlf false
-      - name: Configure Docker for testcontainers
-        run: |
-          # Pre-pull Linux platform images to force platform resolution
-          Write-Host "Pre-pulling Docker images with Linux platform..."
-          docker pull --platform linux/amd64 postgres:14.7
-          docker pull --platform linux/amd64 minio/minio:RELEASE.2022-02-07T08-17-33Z  
-          docker pull --platform linux/amd64 redis:7.0-alpine
-          
-          # Verify Docker setup
-          docker version
-          docker images | findstr -E "(postgres|minio|redis)"
-        shell: pwsh
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -349,7 +325,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-latest]
+        os: [windows-2025]
     runs-on: ${{ matrix.os }}
     env:
       CARGO_BUILD_JOBS: 10
