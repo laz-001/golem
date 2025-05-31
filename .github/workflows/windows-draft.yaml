@@ -19,14 +19,13 @@ permissions:
 
 env:
   BUILD_TARGET: "x86_64-pc-windows-msvc"
-  DOCKER_DEFAULT_PLATFORM: linux/amd64
 
 jobs:
   build:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-2025]
+        os: [windows-latest] # Changed from windows-2025
         group:
           - name: group1
             crates: "golem-api-grpc golem-client golem-common golem-service-base"
@@ -82,11 +81,10 @@ jobs:
   unit-tests: # Renamed from unit-tests-and-checks and modified
     env:
       CARGO_BUILD_JOBS: 10
-      DOCKER_DEFAULT_PLATFORM: linux/amd64 # Added this line
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-2025]
+        os: [windows-latest] # Changed from windows-2025
     runs-on: ${{ matrix.os }}
     steps:
       - name: Configure Git line endings
@@ -127,7 +125,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-2025]
+        os: [windows-latest] # Changed from windows-2025
     runs-on: ${{ matrix.os }}
     steps:
       - name: Configure Git line endings
@@ -162,11 +160,10 @@ jobs:
   worker-tests:
     env:
       CARGO_BUILD_JOBS: 10
-      DOCKER_DEFAULT_PLATFORM: linux/amd64 # Added this line
     strategy:
       fail-fast: true
       matrix:
-        os: [windows-2025]
+        os: [windows-latest] # Changed from windows-2025
         group:
           - name: untagged
           - name: group1
@@ -202,6 +199,12 @@ jobs:
         uses: arduino/setup-protoc@v3
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Pull and tag Windows PostgreSQL image for test compatibility
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          docker pull marekistvanekmycronic/postgres-windows:15.10-20H2
+          docker tag marekistvanekmycronic/postgres-windows:15.10-20H2 postgres:14.7-alpine
       - name: Setup Redis (Linux)
         if: runner.os == 'Linux'
         uses: shogo82148/actions-setup-redis@v1.35.1
@@ -233,11 +236,10 @@ jobs:
   api-and-integration-tests:
     env:
       CARGO_BUILD_JOBS: 8
-      DOCKER_DEFAULT_PLATFORM: linux/amd64 # Added this line
     strategy:
       fail-fast: true
       matrix:
-        os: [windows-2025]
+        os: [windows-latest] # Changed from windows-2025
         group:
           - name: integration-tests-group1
             description: "Full integration tests"
@@ -291,6 +293,12 @@ jobs:
         uses: arduino/setup-protoc@v3
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Pull and tag Windows PostgreSQL image for test compatibility
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          docker pull marekistvanekmycronic/postgres-windows:15.10-20H2
+          docker tag marekistvanekmycronic/postgres-windows:15.10-20H2 postgres:14.7-alpine
       - name: Setup Redis (Linux)
         if: runner.os == 'Linux'
         uses: shogo82148/actions-setup-redis@v1.35.1
@@ -325,7 +333,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-2025]
+        os: [windows-latest] # Changed from windows-2025
     runs-on: ${{ matrix.os }}
     env:
       CARGO_BUILD_JOBS: 10
