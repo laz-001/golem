@@ -209,6 +209,19 @@ jobs:
         run: |
           docker pull marekistvanekmycronic/postgres-windows:15.10-1809
           docker tag marekistvanekmycronic/postgres-windows:15.10-1809 postgres:14.7-alpine
+      - name: Inspect Docker image and environment
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          Write-Host "--- Docker Info ---"
+          docker info
+          Write-Host "--- Docker Images (postgres) ---"
+          docker images postgres --format "{{.Repository}}:{{.Tag}} ID: {{.ID}} OS/Arch: {{.Os}}/{{.Architecture}}"
+          Write-Host "--- Docker Inspect postgres:14.7-alpine ---"
+          docker inspect postgres:14.7-alpine
+          Write-Host "--- Environment Variables ---"
+          Get-ChildItem Env:DOCKER*
+          exit 0 # Ensure script exits with 0
       - name: Setup Redis (Linux)
         if: runner.os == 'Linux'
         uses: shogo82148/actions-setup-redis@v1.35.1
@@ -304,6 +317,19 @@ jobs:
         run: |
           docker pull marekistvanekmycronic/postgres-windows:15.10-1809
           docker tag marekistvanekmycronic/postgres-windows:15.10-1809 postgres:14.7-alpine
+      - name: Inspect Docker image and environment
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          Write-Host "--- Docker Info ---"
+          docker info
+          Write-Host "--- Docker Images (postgres) ---"
+          docker images postgres --format "{{.Repository}}:{{.Tag}} ID: {{.ID}} OS/Arch: {{.Os}}/{{.Architecture}}"
+          Write-Host "--- Docker Inspect postgres:14.7-alpine ---"
+          docker inspect postgres:14.7-alpine
+          Write-Host "--- Environment Variables ---"
+          Get-ChildItem Env:DOCKER*
+          exit 0 # Ensure script exits with 0
       - name: Setup Redis (Linux)
         if: runner.os == 'Linux'
         uses: shogo82148/actions-setup-redis@v1.35.1
