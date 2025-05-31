@@ -203,25 +203,43 @@ jobs:
         uses: arduino/setup-protoc@v3
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Pull and tag Windows PostgreSQL image for test compatibility
+      - name: Checkout postgres-windows repository
+        uses: actions/checkout@v4
+        with:
+          repository: laz-001/docker-postgres-windows
+          path: docker-postgres-windows # Checkout to a specific path
+
+      - name: Build and tag Windows PostgreSQL image for CI compatibility
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          docker pull marekistvanekmycronic/postgres-windows:15.10-1809
-          docker tag marekistvanekmycronic/postgres-windows:15.10-1809 postgres:14.7-alpine
+          Write-Host "Building PostgreSQL container from laz-001/docker-postgres-windows"
+
+          # Navigate to the checked-out pgdocker directory
+          cd docker-postgres-windows
+
+          # Run the build script (defaults to ltsc2022, EDB_VER needs to be set)
+          cmd.exe /c build.cmd ltsc2022 15.10
+
+          # Tag the locally built image as the one tests expect
+          # The build.cmd script now tags it as laz-001/postgres-windows:%pgVer%-%winVer%
+          docker tag laz-001/postgres-windows:15.10-ltsc2022 postgres:14.7-alpine
+
+          Write-Host "PostgreSQL container built and tagged successfully"
+
       - name: Inspect Docker image and environment
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          Write-Host "--- Docker Info ---"
-          docker info
-          Write-Host "--- Docker Images (postgres) ---"
-          docker images postgres --format "{{.Repository}}:{{.Tag}} ID: {{.ID}} OS/Arch: {{.Os}}/{{.Architecture}}"
-          Write-Host "--- Docker Inspect postgres:14.7-alpine ---"
-          docker inspect postgres:14.7-alpine
-          Write-Host "--- Environment Variables ---"
-          Get-ChildItem Env:DOCKER*
-          exit 0 # Ensure script exits with 0
+          # List Docker images
+          docker images
+
+          # Check the status of the PostgreSQL container
+          docker ps -a
+
+          # Inspect the PostgreSQL container
+          docker inspect marekistvanekmycronic/postgres-windows
+
       - name: Setup Redis (Linux)
         if: runner.os == 'Linux'
         uses: shogo82148/actions-setup-redis@v1.35.1
@@ -311,25 +329,29 @@ jobs:
         uses: arduino/setup-protoc@v3
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Pull and tag Windows PostgreSQL image for test compatibility
+      - name: Checkout postgres-windows repository
+        uses: actions/checkout@v4
+        with:
+          repository: laz-001/docker-postgres-windows
+          path: docker-postgres-windows # Checkout to a specific path
+
+      - name: Build and tag Windows PostgreSQL image for CI compatibility
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          docker pull marekistvanekmycronic/postgres-windows:15.10-1809
-          docker tag marekistvanekmycronic/postgres-windows:15.10-1809 postgres:14.7-alpine
-      - name: Inspect Docker image and environment
-        if: runner.os == 'Windows'
-        shell: pwsh
-        run: |
-          Write-Host "--- Docker Info ---"
-          docker info
-          Write-Host "--- Docker Images (postgres) ---"
-          docker images postgres --format "{{.Repository}}:{{.Tag}} ID: {{.ID}} OS/Arch: {{.Os}}/{{.Architecture}}"
-          Write-Host "--- Docker Inspect postgres:14.7-alpine ---"
-          docker inspect postgres:14.7-alpine
-          Write-Host "--- Environment Variables ---"
-          Get-ChildItem Env:DOCKER*
-          exit 0 # Ensure script exits with 0
+          Write-Host "Building PostgreSQL container from laz-001/docker-postgres-windows"
+
+          # Navigate to the checked-out pgdocker directory
+          cd docker-postgres-windows
+
+          # Run the build script (defaults to ltsc2022, EDB_VER needs to be set)
+          cmd.exe /c build.cmd ltsc2022 15.10
+
+          # Tag the locally built image as the one tests expect
+          # The build.cmd script now tags it as laz-001/postgres-windows:%pgVer%-%winVer%
+          docker tag laz-001/postgres-windows:15.10-ltsc2022 postgres:14.7-alpine
+
+          Write-Host "PostgreSQL container built and tagged successfully"
       - name: Setup Redis (Linux)
         if: runner.os == 'Linux'
         uses: shogo82148/actions-setup-redis@v1.35.1
