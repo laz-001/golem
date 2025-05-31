@@ -161,6 +161,8 @@ impl PostgresDb {
     }
 
     async fn start_docker_postgres() -> (DbPostgresConfig, ContainerAsync<Postgres>) {
+        #[cfg(target_os = "windows")]
+        std::env::set_var("DOCKER_DEFAULT_PLATFORM", "windows/amd64"); // Request windows/amd64 platform only on Windows
         let container = Postgres::default()
             .with_tag("14.7-alpine")
             .start()
