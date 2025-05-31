@@ -161,7 +161,7 @@ jobs:
     env:
       CARGO_BUILD_JOBS: 10
     strategy:
-      fail-fast: true
+      fail-fast: false # Changed from true
       matrix:
         os: [windows-latest] # Changed from windows-2025
         group:
@@ -237,7 +237,7 @@ jobs:
     env:
       CARGO_BUILD_JOBS: 8
     strategy:
-      fail-fast: true
+      fail-fast: false # Changed from true
       matrix:
         os: [windows-latest] # Changed from windows-2025
         group:
