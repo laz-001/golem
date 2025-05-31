@@ -203,8 +203,8 @@ jobs:
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          docker pull marekistvanekmycronic/postgres-windows:15.10-20H2
-          docker tag marekistvanekmycronic/postgres-windows:15.10-20H2 postgres:14.7-alpine
+          docker pull marekistvanekmycronic/postgres-windows:15.10-1809
+          docker tag marekistvanekmycronic/postgres-windows:15.10-1809 postgres:14.7-alpine
       - name: Setup Redis (Linux)
         if: runner.os == 'Linux'
         uses: shogo82148/actions-setup-redis@v1.35.1
@@ -297,8 +297,8 @@ jobs:
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          docker pull marekistvanekmycronic/postgres-windows:15.10-20H2
-          docker tag marekistvanekmycronic/postgres-windows:15.10-20H2 postgres:14.7-alpine
+          docker pull marekistvanekmycronic/postgres-windows:15.10-1809
+          docker tag marekistvanekmycronic/postgres-windows:15.10-1809 postgres:14.7-alpine
       - name: Setup Redis (Linux)
         if: runner.os == 'Linux'
         uses: shogo82148/actions-setup-redis@v1.35.1
